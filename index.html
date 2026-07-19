@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizdinAlem</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/main.js" defer></script>
+    
+</head>
+<body>
+    <!-- Main page -->
+    <header class="header">
+        <div class="header-logo-container">
+            <a href="#" class="header-logo">
+                <img src="./assets/icons/logo-colored.svg" alt="Bizdin Alem" width="108" height="85">
+            </a>
+        </div>
+        <div class="header-link-container">
+            <nav class="header-nav">
+                <a href="#" class="header-nav-link header-nav-link--active" aria-current="page">Главная</a>
+                <a href="#" class="header-nav-link">Книги</a>
+                <a href="#" class="header-nav-link">Мои книги</a>
+                <a href="#" class="header-nav-link">О проекте</a>
+            </nav>
+            <button type="button" class="btn-register">
+                <div class="header-btn-register-text">Зарегистрироваться</div>
+                <img src="./assets/icons/header-arrow-toUp.svg" alt="">
+            </button>
+            <div class="lang-switcher">
+                <button type="button" class="lang-switcher-toggle" aria-expanded="false">
+                    RU
+                    <img src="./assets/icons/header-arrow-toDown.svg" alt="" class="arrow">
+                </button>
+                <ul class="lang-switcher-list" hidden>
+                    <li><button type="button" class="lang-switcher-option" data-lang="ru">RU</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="kz">KZ</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="en">EN</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Section with hero-banner -->
+        <section class="hero">
+            <div class="swiper hero-slider">
+                <div class="swiper-wrapper">
+
+                    <!-- Slide 1 - Welcome -->
+                    <article class="swiper-slide hero-slide hero-slide--welcome">
+                        <img src="./assets/icons/ornamentOnHeroBanner.svg" alt="Kazakh ornament" class="hero-slide--decor">
+
+                        <div class="hero-slide--content">
+                            <h1 class="hero-slide--title">Добро пожаловать <br>в мир добрых историй</h1>
+                            <div class="hero-slide--buttons">
+                                <button type="button" class="btn"> 
+                                    <img src="./assets/icons/ReadIcon.svg" alt="">
+                                    Читать книги
+                                </button>
+                                <button type="button" class="btn"> 
+                                    <img src="./assets/icons/ListenIcon.svg" alt="">
+                                    Слушать книги
+                                </button>
+                            </div>
+                        </div>
+
+                        <img src="./assets/images/childrenOnHeroBanner.png" alt="Children who read books" class="hero-slide--image">
+                    </article>
+
+                    <!-- Slide 2 - Book of day -->
+                    <article class="swiper-slide hero-slide hero-slide--book-of-day">
+                        <div class="book-of-day--content">
+                            <span class="book-of-day--badge">КНИГА ДНЯ</span>
+                            <h2 class="book-of-day--title">Мистер Лис</h2>
+                            <p class="book-of-day--description">Добрый и любознательный лисёнок отправляется в удивительное путешествие по волшебному лесу. По дороге он знакомится с новыми друзьями, каждый из которых отличается своими особенностями и талантами.</p>
+                            <div class="book-of-day--rating">
+                                <div class="star-rating">
+                                    <svg class="star-rating__icon star-rating__icon--filled" width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.1284 1.11444C11.862 -0.372053 13.9817 -0.372051 14.7153 1.11444L17.1588 6.06545C17.4501 6.65574 18.0133 7.06487 18.6647 7.15953L24.1285 7.95346C25.7689 8.19183 26.4239 10.2078 25.2369 11.3649L21.2833 15.2187C20.8119 15.6781 20.5968 16.3401 20.7081 16.9889L21.6414 22.4306C21.9216 24.0644 20.2067 25.3104 18.7395 24.539L13.8526 21.9698C13.2699 21.6634 12.5738 21.6634 11.9912 21.9698L7.10425 24.539C5.637 25.3104 3.92214 24.0644 4.20236 22.4306L5.13568 16.9889C5.24695 16.3401 5.03186 15.6781 4.56049 15.2187L0.606868 11.3648C-0.580166 10.2078 0.074856 8.19183 1.7153 7.95346L7.17906 7.15953C7.83048 7.06487 8.39361 6.65574 8.68493 6.06545L11.1284 1.11444Z" fill="currentColor"/>
+                                    </svg>
+                                    <svg class="star-rating__icon star-rating__icon--filled" width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.1284 1.11444C11.862 -0.372053 13.9817 -0.372051 14.7153 1.11444L17.1588 6.06545C17.4501 6.65574 18.0133 7.06487 18.6647 7.15953L24.1285 7.95346C25.7689 8.19183 26.4239 10.2078 25.2369 11.3649L21.2833 15.2187C20.8119 15.6781 20.5968 16.3401 20.7081 16.9889L21.6414 22.4306C21.9216 24.0644 20.2067 25.3104 18.7395 24.539L13.8526 21.9698C13.2699 21.6634 12.5738 21.6634 11.9912 21.9698L7.10425 24.539C5.637 25.3104 3.92214 24.0644 4.20236 22.4306L5.13568 16.9889C5.24695 16.3401 5.03186 15.6781 4.56049 15.2187L0.606868 11.3648C-0.580166 10.2078 0.074856 8.19183 1.7153 7.95346L7.17906 7.15953C7.83048 7.06487 8.39361 6.65574 8.68493 6.06545L11.1284 1.11444Z" fill="currentColor"/>
+                                    </svg>
+                                    <svg class="star-rating__icon star-rating__icon--filled" width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.1284 1.11444C11.862 -0.372053 13.9817 -0.372051 14.7153 1.11444L17.1588 6.06545C17.4501 6.65574 18.0133 7.06487 18.6647 7.15953L24.1285 7.95346C25.7689 8.19183 26.4239 10.2078 25.2369 11.3649L21.2833 15.2187C20.8119 15.6781 20.5968 16.3401 20.7081 16.9889L21.6414 22.4306C21.9216 24.0644 20.2067 25.3104 18.7395 24.539L13.8526 21.9698C13.2699 21.6634 12.5738 21.6634 11.9912 21.9698L7.10425 24.539C5.637 25.3104 3.92214 24.0644 4.20236 22.4306L5.13568 16.9889C5.24695 16.3401 5.03186 15.6781 4.56049 15.2187L0.606868 11.3648C-0.580166 10.2078 0.074856 8.19183 1.7153 7.95346L7.17906 7.15953C7.83048 7.06487 8.39361 6.65574 8.68493 6.06545L11.1284 1.11444Z" fill="currentColor"/>
+                                    </svg>
+                                    <svg class="star-rating__icon star-rating__icon--filled" width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.1284 1.11444C11.862 -0.372053 13.9817 -0.372051 14.7153 1.11444L17.1588 6.06545C17.4501 6.65574 18.0133 7.06487 18.6647 7.15953L24.1285 7.95346C25.7689 8.19183 26.4239 10.2078 25.2369 11.3649L21.2833 15.2187C20.8119 15.6781 20.5968 16.3401 20.7081 16.9889L21.6414 22.4306C21.9216 24.0644 20.2067 25.3104 18.7395 24.539L13.8526 21.9698C13.2699 21.6634 12.5738 21.6634 11.9912 21.9698L7.10425 24.539C5.637 25.3104 3.92214 24.0644 4.20236 22.4306L5.13568 16.9889C5.24695 16.3401 5.03186 15.6781 4.56049 15.2187L0.606868 11.3648C-0.580166 10.2078 0.074856 8.19183 1.7153 7.95346L7.17906 7.15953C7.83048 7.06487 8.39361 6.65574 8.68493 6.06545L11.1284 1.11444Z" fill="currentColor"/>
+                                    </svg>
+                                    <svg class="star-rating__icon" width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.1284 1.11444C11.862 -0.372053 13.9817 -0.372051 14.7153 1.11444L17.1588 6.06545C17.4501 6.65574 18.0133 7.06487 18.6647 7.15953L24.1285 7.95346C25.7689 8.19183 26.4239 10.2078 25.2369 11.3649L21.2833 15.2187C20.8119 15.6781 20.5968 16.3401 20.7081 16.9889L21.6414 22.4306C21.9216 24.0644 20.2067 25.3104 18.7395 24.539L13.8526 21.9698C13.2699 21.6634 12.5738 21.6634 11.9912 21.9698L7.10425 24.539C5.637 25.3104 3.92214 24.0644 4.20236 22.4306L5.13568 16.9889C5.24695 16.3401 5.03186 15.6781 4.56049 15.2187L0.606868 11.3648C-0.580166 10.2078 0.074856 8.19183 1.7153 7.95346L7.17906 7.15953C7.83048 7.06487 8.39361 6.65574 8.68493 6.06545L11.1284 1.11444Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <span class="rating-value">4.8 (110)</span>
+                            </div>
+                            <div class="book-of-day__buttons">
+                                <button type="button" class="book-of-day__btn book-of-day__btn--read"> 
+                                    <svg class="book-of-day__btn--icon" width="38" height="28" viewBox="0 0 38 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18.6928 6.19103C18.6928 3.26745 16.0202 0.875 12.7541 0.875H0.875V20.0146H12.8272C18.6928 20.0146 18.6928 25.3323 18.6928 25.3323M18.6928 25.3323V6.19103C18.6928 3.26586 21.3655 0.875 24.6315 0.875H36.5107V20.0146H24.6315C18.6928 20.0146 18.6928 25.3323 18.6928 25.3323ZM22.0337 27.125C22.4054 26.4358 22.9846 25.853 23.706 25.4422C24.4274 25.0314 25.2626 24.8088 26.1175 24.7995H34.7289M15.352 27.125C14.987 26.4311 14.4095 25.8442 13.6865 25.4325C12.9636 25.0209 12.1249 24.8014 11.2681 24.7995H2.65678" stroke="currentColor" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Читать книгу
+                                </button>
+                                <button type="button" class="book-of-day__btn book-of-day__btn--listen"> 
+                                    <svg class="book-of-day__btn--icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.94562 23.3333H2.35667C1.68486 23.3333 1.12437 23.1087 0.675208 22.6596C0.226041 22.2104 0.000972222 21.6494 0 20.9767V11.6667C0 10.0489 0.304305 8.53319 0.912916 7.11958C1.52153 5.70597 2.35472 4.47028 3.4125 3.4125C4.47028 2.35472 5.70597 1.52153 7.11958 0.912916C8.53319 0.304305 10.0489 0 11.6667 0C13.2844 0 14.8001 0.304305 16.2137 0.912916C17.6274 1.52153 18.8631 2.35472 19.9208 3.4125C20.9786 4.47028 21.8118 5.70597 22.4204 7.11958C23.029 8.53319 23.3333 10.0489 23.3333 11.6667V20.9781C23.3333 21.649 23.1087 22.209 22.6596 22.6581C22.2104 23.1073 21.6494 23.3324 20.9767 23.3333H17.3877V14.3587H21.875V11.6667C21.875 8.82292 20.8848 6.41083 18.9044 4.43042C16.924 2.45 14.5114 1.45931 11.6667 1.45833C8.82194 1.45736 6.40986 2.44806 4.43042 4.43042C2.45097 6.41278 1.46028 8.82486 1.45833 11.6667V14.3587H5.94562V23.3333Z" fill="currentColor"/>
+                                    </svg>
+                                    Слушать книгу
+                                </button>
+                            </div>
+                            <div class="book-of-day--calendar-quote">
+                                <img src="./assets/icons/CalendarIcon.svg" alt="" class="calendar-icon">
+                                <div class="book-of-day--quote">
+                                    <p class="first-line">Каждый день — новая книга!</p>
+                                    <p class="second-line">Возвращайтесь завтра за новой историей</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-of-day--box">
+                            <img src="./assets/images/BookOfSecondSlide.png" alt="Book Mr.Fox" class="book">
+                            <div class="book-badge">
+                                <img src="./assets/icons/StarWithShadowOnBook.svg" alt="" class="book-badge--icon">
+                                <p class="book-badge--text">Выбор нашей команды</p>
+                            </div>
+                        </div>
+
+                    </article>
+
+                    <!-- Slide 3 - Challenge -->
+                    <article class="swiper-slide hero-slide hero-slide--challenge">
+                        <img src="./assets/icons/OrnamentChallengeSlide.svg" alt="" class="ornamentOnChallengeBanner">
+
+                        <div class="hero-slide--challenge__position">
+
+                            <div class="challenge-left">
+                                <div class="challenge-left__content">
+                                    <div class="challenge-left__content--text">
+                                        <div class="text-day">
+                                            <p class="text-day--count">12</p>
+                                            <p class="text-day--days">дней</p>
+                                        </div>
+                                        <p class="text">без перерыва</p>
+                                        <p class="quote">Так держать! Ты в огне!</p>
+                                    </div>
+                                    <img src="./assets/images/ChallengeLeftImage.png" alt="Child with fire" width="385" height="385">
+                                </div>
+                                <div class="challenge-left__streak">
+                                    <div class="challenge-left__dot challenge-left__dot--done">
+                                        <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2 12.5143L9.68293 18L20 2" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="challenge-left__dot challenge-left__dot--done">
+                                        <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2 12.5143L9.68293 18L20 2" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="challenge-left__dot challenge-left__dot--done">
+                                        <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2 12.5143L9.68293 18L20 2" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="challenge-left__dot challenge-left__dot--done">
+                                        <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2 12.5143L9.68293 18L20 2" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="challenge-left__dot challenge-left__dot--done">
+                                        <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2 12.5143L9.68293 18L20 2" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="challenge-left__dot challenge-left__dot--done">
+                                        <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2 12.5143L9.68293 18L20 2" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="challenge-left__dot challenge-left__dot--active">
+                                        <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2 12.5143L9.68293 18L20 2" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="challenge-right">
+                                <span class="challenge-right__label">Текущая книга</span>
+                                <div class="challenge-book__info">
+                                    <img src="./assets/images/ChallengeRightImageBook.png" alt="Current Book" width="210" height="263">
+                                    <div class="challenge-book__info--details">
+                                        <h3 class="challenge-book__info--title">Магические приключения:</h3>
+                                        <h4 class="challenge-book__info--subtitle">Затерянный лес</h4>
+                                        <p class="challenge-book__info--description">Главные герои случайно попадают в загадочный затерянный лес, который живёт по своим волшебным правилам.</p>
+                                        <div class="challenge-book__info--progress">
+                                            <span class="challenge__progress--pages">Cтраниц 10 из 52</span>
+                                            <div class="challenge__progress--bar">
+                                                <div class="challenge__progress--fill"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="challenge-right__button-container">
+                                <button type="button" class="challenge-right__btn">Продолжить чтение</button>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </article>
+                    
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </section>
+
+        <!-- Section trend -->
+        <section class="trending">
+            <h2 class="trending__title">В тренде на этой неделе:</h2>
+
+            <div class="swiper trending-slider">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide trending__item">
+                        <span class="trending__number trending__number--1">1</span>
+                        <div class="trending__card">
+                            <img src="./assets/images/TrendingBook1.png" alt="Book: Mr. Fox" class="trending__book" width="198.10887145996094" height="252.64447021484375">
+                            <span class="trending__level">Английский - уровень 1</span>
+                            <p class="trending__book-title">Мистер Лис</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide trending__item">
+                        <span class="trending__number trending__number--2">2</span>
+                        <div class="trending__card">
+                            <img src="./assets/images/TrendingBook2.png" alt="Book: Our new Friend" class="trending__book" height="247.2305145263672">
+                            <span class="trending__level">Английский - уровень 1</span>
+                            <p class="trending__book-title">Наш новый друг</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide trending__item">
+                        <span class="trending__number trending__number--3">3</span>
+                        <div class="trending__card trending__card--2">
+                            <img src="./assets/images/TrendingBook3.png" alt="Book: Friends together" class="trending__book" height="247.2305145263672">
+                            <span class="trending__level trending__level--2">Английский - уровень 2</span>
+                            <p class="trending__book-title">Друзья вместе</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button type="button" class="trending__nav trending__nav--prev">
+                    <svg width="19" height="33" viewBox="0 0 19 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.125 1.5L2.125 16.5L17.125 31.5" stroke="#282828" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </button>
+
+                <button type="button" class="trending__nav trending__nav--next">
+                    <svg width="19" height="33" viewBox="0 0 19 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 1.5L16.5 16.5L1.5 31.5" stroke="#282828" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </button>
+
+            </div>
+        </section>
+
+        <!-- Section reading-levels -->
+        <section class="reading-levels">
+            <div class="reading-levels__grid">
+
+                <div class="reading-levels__item">
+                    <div class="reading-levels__content reading-levels__content--beginner">
+                        <h3 class="reading-levels__title">НАЧИНАЮЩИЕ ЧИТАТЕЛИ</h3>
+                        <p class="reading-levels__description">Для читателей <br>дошкольного возраста <br>(3–6 лет)</p>
+                    </div>
+                    <div class="reading-levels__bar reading-levels__bar--beginner"></div>
+                </div>
+
+                <div class="reading-levels__item">
+                    <div class="reading-levels__content reading-levels__content--level1">
+                        <h3 class="reading-levels__title">УРОВЕНЬ 1</h3>
+                        <p class="reading-levels__description">Для читателей младшего <br>школьного возраста <br>(6–10 лет)</p>
+                    </div>
+                    <div class="reading-levels__bar reading-levels__bar--level1"></div>
+                </div>
+
+                <div class="reading-levels__item">
+                    <div class="reading-levels__content reading-levels__content--level2">
+                        <h3 class="reading-levels__title">УРОВЕНЬ 2</h3>
+                        <p class="reading-levels__description">Для читателей среднего <br>школьного возраста <br>(10–12 лет)</p>
+                    </div>
+                    <div class="reading-levels__bar reading-levels__bar--level2"></div>
+                </div>
+
+                <div class="reading-levels__item">
+                    <div class="reading-levels__content reading-levels__content--level3">
+                        <h3 class="reading-levels__title">УРОВЕНЬ 3</h3>
+                        <p class="reading-levels__description">Для читателей <br>подросткового возраста <br>(12–16 лет)</p>
+                    </div>
+                    <div class="reading-levels__bar reading-levels__bar--level3"></div>
+                </div>
+            
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-container__brand">
+                <a href="#" class="footer__logo">
+                    <img src="./assets/icons/logo-white.svg" alt="Bizdin Alem" width="186" height="132">
+                </a>
+                <p class="footer__description">“Bizdin Alem” – инклюзия туралы қазақ, орыс және ағылшын тілінде жазылған кітаптарды оқитын балаларға арналған онлайн кітапхана.</p>
+
+                <div class="footer__lang-switcher">
+                    <button type="button" class="footer__lang-toggle" aria-expanded="false">
+                        Русский
+                        <img src="./assets/icons/ArrowToDownLangSwitcher.svg" alt="" class="footer__lang-arrow">
+                    </button>
+                    <ul class="footer__lang-list" hidden>
+                        <li><button type="button" class="footer__lang-option" data-lang="ru">Русский</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="kz">Қазақша</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="en">English</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">КІТАПХАНА</h3>
+                <div class="line"></div>
+                <a href="#" class="footer__nav-link">Басты бет</a>
+                <a href="#" class="footer__nav-link">Кітаптар</a>
+                <a href="#" class="footer__nav-link">Менің кітаптарым</a>
+                <a href="#" class="footer__nav-link">Жоба туралы</a>
+            </nav>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">Контакты</h3>
+                <a href="#" class="footer__nav-link footer__nav-link--margin">@bizdinalem</a>
+            </nav>
+
+        </div>
+    </footer>
+
+</body>
+</html>
