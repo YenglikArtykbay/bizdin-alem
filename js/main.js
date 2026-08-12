@@ -32,28 +32,28 @@ langOptions.forEach(option => {
     });
 });
 
-const heroSlider = new Swiper('.hero-slider', {
-    loop: true,
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    speed: 600,
-});
+const heroSliderEl = document.querySelector('.hero-slider');
+if (heroSliderEl) {
+    new Swiper(heroSliderEl, {
+        loop: true,
+        autoplay: { delay: 5000, disableOnInteraction: false },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        speed: 600,
+    });
+}
 
-const trendingSlider = new Swiper('.trending-slider', {
-    slidesPerView: 3,
-    spaceBetween: 40,
-    watchOverflow: false, 
-    navigation: {
-        prevEl: '.trending__nav--prev',
-        nextEl: '.trending__nav--next',
-    },
-});
+const trendingSliderEl = document.querySelector('.trending-slider');
+if (trendingSliderEl) {
+    new Swiper(trendingSliderEl, {
+        slidesPerView: 3,
+        spaceBetween: 40,
+        watchOverflow: false,
+        navigation: {
+            prevEl: '.trending__nav--prev',
+            nextEl: '.trending__nav--next',
+        },
+    });
+}
 
 const footerLangSwitcher = document.querySelector('.footer__lang-switcher');
 const footerLangToggle = document.querySelector('.footer__lang-toggle');
@@ -83,3 +83,28 @@ footerLangOptions.forEach(option => {
         footerLangToggle.setAttribute('aria-expanded', 'false');
     });
 });
+
+
+//Profile Child swiper 
+
+// Общие свайперы карточек с книгами (с пагинацией)
+document.querySelectorAll('.info-card__swiper').forEach((swiperEl) => {
+    new Swiper(swiperEl, {
+        slidesPerView: 3,
+        spaceBetween: 12,
+        pagination: {
+            el: swiperEl.querySelector('.swiper-pagination'),
+            clickable: true,
+        },
+    });
+});
+
+// Свайпер значков (без пагинации, дробный slidesPerView)
+
+const badgesSwiperEl = document.querySelector('.info-card__swiper-badges');
+if (badgesSwiperEl) {
+    new Swiper(badgesSwiperEl, {
+        slidesPerView: 2.5,
+        spaceBetween: 20,
+    });
+}

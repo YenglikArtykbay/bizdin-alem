@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizdinAlem</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/main.js" defer></script>
+    
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo-container">
+            <a href="#" class="header-logo">
+                <img src="/assets/icons/logo-colored.svg" alt="Bizdin Alem" width="108" height="85">
+            </a>
+        </div>
+        <div class="header-link-container">
+            <nav class="header-nav">
+                <a href="#" class="header-nav-link header-nav-link--active" aria-current="page">Главная</a>
+                <a href="#" class="header-nav-link">Книги</a>
+                <a href="#" class="header-nav-link">Мои книги</a>
+                <a href="#" class="header-nav-link">О проекте</a>
+            </nav>
+            <button type="button" class="btn-register">
+                <div class="header-btn-register-text">Зарегистрироваться</div>
+                <img src="/assets/icons/header-arrow-toUp.svg" alt="">
+            </button>
+            <div class="lang-switcher">
+                <button type="button" class="lang-switcher-toggle" aria-expanded="false">
+                    RU
+                    <img src="/assets/icons/header-arrow-toDown.svg" alt="" class="arrow">
+                </button>
+                <ul class="lang-switcher-list" hidden>
+                    <li><button type="button" class="lang-switcher-option" data-lang="ru">RU</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="kz">KZ</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="en">EN</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="child-profile">
+        <div class="child-profile__layout">
+
+            <aside class="child-profile__sidebar">
+                <div class="child-profile__sidebar--avatar">
+                    <img src="/assets/images/Avatar_ChildProfile.png" alt="Aidana" width="260" height="260">
+                </div>
+                <p class="child-profile__label">Имя</p>
+                <div class="child-profile__name-box">
+                    <p class="child-profile__name">Айдана</p>
+                    <button type="button" class="name__edit-btn">
+                        <svg class="edit-pencil-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.13673 11.0563C1.26486 10.6 1.50548 10.1844 1.84298 9.84688L7.50548 4.18437L8.56486 3.125L11.8149 6.375L12.8742 7.43437L11.8149 8.49375L6.15236 14.1563C5.81798 14.4906 5.39923 14.7344 4.94298 14.8625L0.949232 15.975C0.689857 16.0469 0.408607 15.975 0.217982 15.7813C0.027357 15.5875 -0.0445179 15.3094 0.0273571 15.05L1.13673 11.0563ZM2.87423 10.9406C2.73673 11.0875 2.63673 11.2656 2.58361 11.4594L1.83048 14.175L4.54611 13.4219C4.74611 13.3656 4.92736 13.2625 5.07736 13.1188L2.87111 10.9406H2.87423ZM13.9367 6.375L10.6867 3.125L9.62423 2.06562L11.0274 0.6625C11.4492 0.2375 12.0242 0 12.6242 0C13.2242 0 13.7992 0.2375 14.2211 0.6625L15.3367 1.77813C15.7617 2.20312 15.9992 2.77812 15.9992 3.375C15.9992 3.97187 15.7617 4.55 15.3367 4.97188L13.9336 6.375H13.9367Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="child-profile__progress-badge">
+                    <img class="progress-badge__star-img" src="/assets/images/Star_ChildProfile.png" alt="Star" width="81.29">
+                    <div class="progress-badge__text">
+                        <span class="progress-badge__text--read">Ты прочитал</span>
+                        <span class="progress-badge__text--count">12 книг</span>
+                    </div>
+                    <img class="progress-badge__books-img" src="/assets/images/Books_ChildProfile.png" alt="Books" width="88" height="88">
+                </div>
+                
+                <img src="/assets/images/Children_On_Background_ChildProfile.png" alt="Children" class="child-profile__aside-img">
+            </aside>
+
+            <div class="child-profile__content">
+
+                <section class="continue-banner">
+                    <div class="continue-banner__info">
+                        <div class="continue-banner__info--box">
+                            <img src="/assets/images/ChallengeRightImageBook.png" alt="Magic Adventures: The Lost Forest" width="149" height="187" style="border-radius: 20px;">
+                            <div class="continue-banner__details">
+                                <h2 class="continue-banner__title">Продолжить книгу</h2>
+                                <p class="continue-banner__book-title">Магические <br>приключения:</p>
+                                <p class="continue-banner__book-subtitle">Затерянный лес</p>
+                                <div class="continue-banner__progress">
+                                    <span class="continue-banner__progress-text">Ты прочитал 30%</span>
+                                    <div class="continue-banner__progress-bar">
+                                        <div class="continue-banner__progress-fill" style="width: 30%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <img class="child-profile__img child-profile-cloud1" src="/assets/images/clouds.png" alt="Cloud" width="209">
+                        <img class="child-profile__img child-profile-cloud2" src="/assets/images/clouds.png" alt="Cloud" width="209">
+                        <img class="child-profile__img child-profile-cloud3" src="/assets/images/clouds.png" alt="Cloud" width="111.8">
+                        <img class="child-profile__img child-profile-children" src="/assets/images/BalloonDecor_ChildProfile.png" alt="Balloon with Children" width="255">
+
+                        <button class="continue-banner__btn" type="button">Продолжить чтение</button>
+                    </div>
+                </section>
+
+                <section class="child-profile__grid">
+                    <div class="info-card info-card--green">
+                        <div class="info-card__header">
+    
+                            <div class="info-card__name">
+                                <div class="info-card__icon info-card__icon--green">
+                                    <svg width="46" height="31" viewBox="0 0 46 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M38.125 0L22.875 15.25L7.625 0L0 7.625L22.875 30.5L45.75 7.625" fill="white"/>
+                                    </svg>
+                                </div>
+                                <h3 class="info-card__title">Прочитанные <br>книги</h3>
+                            </div>
+                            <a href="#" class="info-card__link">Смотреть все</a>
+                        </div>
+                        
+                        <div class="swiper info-card__swiper info-card__cards-padding">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_FoxAndFriends_ChildProfile.png" alt="Лисёнок и его друзья" width="109" height="160">
+                                </div>
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_Kitten_ChildProfile.png" alt="Котёнок Снежок" width="109" height="160">
+                                </div>
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_BigAdventureOfTeddy_ChildProfile.png" alt="Большое путешествие медвежонка" width="109" height="160">
+                                </div>
+
+                                <!-- ещё слайды, для добавления новых книг -->
+
+                            
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_BigAdventureOfTeddy_ChildProfile.png" alt="Большое путешествие медвежонка" width="109" height="160">
+                                </div>
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_BigAdventureOfTeddy_ChildProfile.png" alt="Большое путешествие медвежонка" width="109" height="160">
+                                </div>
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_BigAdventureOfTeddy_ChildProfile.png" alt="Большое путешествие медвежонка" width="109" height="160">
+                                </div>
+                                
+
+                                
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                    <div class="info-card info-card--red">
+                        <div class="info-card__header">
+    
+                            <div class="info-card__name">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M32.0026 56.9333L28.1359 53.4133C14.4026 40.96 5.33594 32.72 5.33594 22.6667C5.33594 14.4267 11.7893 8 20.0026 8C24.6426 8 29.0959 10.16 32.0026 13.5467C34.9093 10.16 39.3626 8 44.0026 8C52.2159 8 58.6693 14.4267 58.6693 22.6667C58.6693 32.72 49.6026 40.96 35.8693 53.4133L32.0026 56.9333Z" fill="#E51919"/>
+                                </svg>
+                                <h3 class="info-card__title">Любимые <br>книги</h3>
+                            </div>
+                            <a href="#" class="info-card__link">Смотреть все</a>
+                        </div>
+                        
+                        <div class="swiper info-card__swiper info-card__cards-padding">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_SecretOfStarSky_ChildProfile.png" alt="Тайна звёздного неба" width="109" height="160">
+                                </div>
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_Dragon_ChildProfile.png" alt="Дракончик Пых" width="109" height="160">
+                                </div>
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_Pirates_ChildProfile.png" alt="Пиратские приключения" width="109" height="160">
+                                </div>
+
+                                <!-- ещё слайды, для добавления новых книг -->
+
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_SecretOfStarSky_ChildProfile.png" alt="Тайна звёздного неба" width="109" height="160">
+                                </div>
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_Dragon_ChildProfile.png" alt="Дракончик Пых" width="109" height="160">
+                                </div>
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_Pirates_ChildProfile.png" alt="Пиратские приключения" width="109" height="160">
+                                </div>
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-card__header">
+    
+                            <div class="info-card__name">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.5" d="M30.0037 40.0006C15.6037 40.0006 13.0537 25.6506 12.6037 14.2656C12.4787 11.1006 12.4137 9.51556 13.6037 8.05306C14.7937 6.58806 16.2162 6.34806 19.0637 5.86806C22.68 5.27568 26.3393 4.98552 30.0037 5.00056C34.4612 5.00056 38.1362 5.39306 40.9462 5.86806C43.7912 6.34806 45.2162 6.58806 46.4037 8.05306C47.5937 9.51806 47.5312 11.1006 47.4037 14.2656C46.9537 25.6481 44.4037 40.0006 30.0037 40.0006Z" fill="#EBAC00"/>
+                                <path d="M44.1 31.055L51.1425 27.1425C53.0225 26.0975 53.9625 25.575 54.4825 24.695C55 23.815 55 22.74 55 20.5875V20.405C55 17.7975 55 16.4925 54.2925 15.51C53.585 14.5275 52.3475 14.115 49.8725 13.29L47.5 12.5L47.4575 12.7125C47.4442 13.1842 47.4258 13.7017 47.4025 14.265C47.1825 19.8275 46.46 26.0975 44.1025 31.055M12.6 14.265C12.8175 19.8275 13.54 26.0975 15.9 31.055L8.8575 27.1425C6.9775 26.0975 6.035 25.575 5.5175 24.695C5 23.815 5 22.74 5 20.5875V20.405C5 17.7975 5 16.4925 5.7075 15.51C6.415 14.5275 7.6525 14.115 10.1275 13.29L12.5 12.5L12.5425 12.7175C12.5558 13.1858 12.5742 13.7025 12.5975 14.2675" fill="#EBAC00"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.125 55C13.125 54.5027 13.3225 54.0258 13.6742 53.6742C14.0258 53.3225 14.5027 53.125 15 53.125H45C45.4973 53.125 45.9742 53.3225 46.3258 53.6742C46.6775 54.0258 46.875 54.5027 46.875 55C46.875 55.4973 46.6775 55.9742 46.3258 56.3258C45.9742 56.6775 45.4973 56.875 45 56.875H15C14.5027 56.875 14.0258 56.6775 13.6742 56.3258C13.3225 55.9742 13.125 55.4973 13.125 55Z" fill="#EBAC00"/>
+                                <path opacity="0.5" d="M38.6469 53.1233H21.3594L22.1019 48.7483C22.2151 48.1818 22.5211 47.6719 22.9677 47.3055C23.4144 46.9391 23.9741 46.7386 24.5519 46.7383H35.4519C36.03 46.7381 36.5904 46.9382 37.0376 47.3047C37.4847 47.6712 37.7911 48.1813 37.9044 48.7483L38.6469 53.1233Z" fill="#EBAC00"/>
+                                <path d="M30.0007 40C29.3507 40 28.7257 39.9717 28.1257 39.915V46.74H31.8757V39.915C31.2524 39.9727 30.6267 40.001 30.0007 40ZM27.8657 15.0575C28.8157 13.35 29.2907 12.5 30.0007 12.5C30.7107 12.5 31.1857 13.35 32.1357 15.0575L32.3807 15.4975C32.6507 15.9825 32.7857 16.2225 32.9957 16.3825C33.2082 16.5425 33.4707 16.6025 33.9957 16.72L34.4707 16.83C36.3157 17.2475 37.2382 17.455 37.4582 18.16C37.6782 18.865 37.0482 19.6025 35.7907 21.0725L35.4657 21.4525C35.1082 21.87 34.9282 22.0775 34.8482 22.3375C34.7682 22.5975 34.7957 22.875 34.8482 23.4325L34.8982 23.94C35.0882 25.9025 35.1832 26.885 34.6107 27.32C34.0357 27.755 33.1707 27.3575 31.4432 26.5625L30.9982 26.3575C30.5057 26.1325 30.2607 26.02 30.0007 26.02C29.7407 26.02 29.4957 26.1325 29.0032 26.3575L28.5582 26.5625C26.8307 27.36 25.9657 27.755 25.3907 27.32C24.8157 26.885 24.9132 25.9025 25.1032 23.94L25.1532 23.4325C25.2057 22.875 25.2332 22.5975 25.1532 22.3375C25.0732 22.0775 24.8932 21.87 24.5357 21.4525L24.2107 21.0725C22.9532 19.6025 22.3232 18.8675 22.5432 18.16C22.7632 17.455 23.6857 17.2475 25.5307 16.83L26.0057 16.72C26.5307 16.6025 26.7932 16.545 27.0057 16.3825C27.2157 16.2225 27.3507 15.9825 27.6207 15.4975L27.8657 15.0575Z" fill="#EBAC00"/>
+                                </svg>
+                                <h3 class="info-card__title">Значки за <br>чтение</h3>
+                            </div>
+                            <a href="#" class="info-card__link">Смотреть все</a>
+                        </div>
+                        
+                        <div class="swiper info-card__swiper-badges">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide info-card__badge">
+                                    <img src="/assets/images/Badge1_ChildProfile.png" alt="Книжный червячок" height="135">
+                                </div>
+                                <div class="swiper-slide info-card__badge">
+                                    <img src="/assets/images/Badge2_ChildProfile.png" alt="Первая книга" height="135">
+                                </div>
+                                <div class="swiper-slide info-card__badge3">
+                                    <img src="/assets/images/Badge3_ChildProfile.png" alt="Ночной читатель" height="160">
+                                </div>
+
+                                <!-- ещё слайды, для добавления новых значков -->
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card info-card--gray">
+                        <div class="info-card__header">
+    
+                            <div class="info-card__name">
+                                <div class="info-card__icon info-card__icon--gray">
+                                    <svg width="25" height="36" viewBox="0 0 25 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.75 6.88333C0.75 4.73667 0.75 3.66333 1.16783 2.843C1.53534 2.12174 2.12174 1.53534 2.843 1.16783C3.66333 0.75 4.73667 0.75 6.88333 0.75H17.6167C19.7633 0.75 20.8367 0.75 21.657 1.16783C22.3783 1.53534 22.9647 2.12174 23.3322 2.843C23.75 3.66333 23.75 4.73667 23.75 6.88333V32.3846C23.75 33.3161 23.75 33.7818 23.5564 34.0368C23.4728 34.1476 23.366 34.239 23.2436 34.3045C23.1211 34.37 22.9859 34.4082 22.8472 34.4163C22.5272 34.4354 22.14 34.1767 21.3657 33.6611L12.25 27.5833L3.13433 33.6592C2.36 34.1767 1.97283 34.4354 1.65083 34.4163C1.51252 34.4079 1.37766 34.3696 1.25556 34.3041C1.13346 34.2386 1.02702 34.1474 0.943583 34.0368C0.75 33.7818 0.75 33.3161 0.75 32.3846V6.88333Z" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3 class="info-card__title">Сохраненные <br>книги</h3>
+                            </div>
+                            <a href="#" class="info-card__link">Смотреть все</a>
+                        </div>
+                        
+                        <div class="swiper info-card__swiper info-card__cards-padding">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_FoxAndFriends_ChildProfile.png" alt="Лисёнок и его друзья" width="107" height="161">
+                                </div>
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_Kitten_ChildProfile.png" alt="Котёнок Снежок" width="107" height="161">
+                                </div>
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_BigAdventureOfTeddy_ChildProfile.png" alt="Большое путешествие медвежонка" width="107" height="161">
+                                </div>
+
+                                <!-- ещё слайды, для добавления новых книг -->
+
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_FoxAndFriends_ChildProfile.png" alt="Лисёнок и его друзья" width="107" height="161">
+                                </div>
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_Kitten_ChildProfile.png" alt="Котёнок Снежок" width="107" height="161">
+                                </div>
+                                <div class="swiper-slide info-card__item">
+                                    <img src="/assets/images/Book_BigAdventureOfTeddy_ChildProfile.png" alt="Большое путешествие медвежонка" width="107" height="161">
+                                </div>
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-container__brand">
+                <a href="#" class="footer__logo">
+                    <img src="/assets/icons/logo-white.svg" alt="Bizdin Alem" width="186" height="132">
+                </a>
+                <p class="footer__description">“Bizdin Alem” – инклюзия туралы қазақ, орыс және ағылшын тілінде жазылған кітаптарды оқитын балаларға арналған онлайн кітапхана.</p>
+
+                <div class="footer__lang-switcher">
+                    <button type="button" class="footer__lang-toggle" aria-expanded="false">
+                        Русский
+                        <img src="/assets/icons/ArrowToDownLangSwitcher.svg" alt="" class="footer__lang-arrow">
+                    </button>
+                    <ul class="footer__lang-list" hidden>
+                        <li><button type="button" class="footer__lang-option" data-lang="ru">Русский</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="kz">Қазақша</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="en">English</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">КІТАПХАНА</h3>
+                <div class="line"></div>
+                <a href="#" class="footer__nav-link">Басты бет</a>
+                <a href="#" class="footer__nav-link">Кітаптар</a>
+                <a href="#" class="footer__nav-link">Менің кітаптарым</a>
+                <a href="#" class="footer__nav-link">Жоба туралы</a>
+            </nav>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">Контакты</h3>
+                <a href="#" class="footer__nav-link footer__nav-link--margin">@bizdinalem</a>
+            </nav>
+
+        </div>
+    </footer>
+
+</body>
+</html>
