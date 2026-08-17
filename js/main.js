@@ -133,3 +133,55 @@ if (collectionSwiperEl) {
         },
     });
 }
+
+
+// Survey page — логика опроса
+
+const surveyCard = document.querySelector('.survey-page__card');
+
+if (surveyCard) {
+    const questionGroups = surveyCard.querySelectorAll('.survey-question__options');
+    const submitBtn = surveyCard.querySelector('.survey-page__submit-btn');
+
+    // Выбор смайлика в каждом вопросе
+    questionGroups.forEach((group) => {
+        group.addEventListener('click', (e) => {
+            const btn = e.target.closest('.survey-option');
+            if (!btn) return;
+
+            group.querySelectorAll('.survey-option').forEach((opt) => {
+                opt.classList.remove('survey-option--selected');
+                opt.setAttribute('aria-checked', 'false');
+            });
+
+            btn.classList.add('survey-option--selected');
+            btn.setAttribute('aria-checked', 'true');
+        });
+    });
+
+    // Сбор и отправка ответа
+    submitBtn?.addEventListener('click', () => {
+        const answers = [];
+        let allAnswered = true;
+
+        questionGroups.forEach((group, index) => {
+            const selected = group.querySelector('.survey-option--selected');
+            if (!selected) {
+                allAnswered = false;
+                return;
+            }
+            answers.push({
+                question: index + 1,
+                rating: Number(selected.dataset.rating),
+            });
+        });
+
+        if (!allAnswered) {
+            alert('Пожалуйста, ответь на все вопросы перед отправкой');
+            return;
+        }
+
+        console.log('Ответы опроса:', answers);
+        alert('Спасибо за участие! (пока просто в консоли — бэк подключит отправку)');
+    });
+}

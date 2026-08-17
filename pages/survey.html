@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizdinAlem</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/main.js" defer></script>
+    
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo-container">
+            <a href="#" class="header-logo">
+                <img src="/assets/icons/logo-colored.svg" alt="Bizdin Alem" width="108" height="85">
+            </a>
+        </div>
+        <div class="header-link-container">
+            <nav class="header-nav">
+                <a href="#" class="header-nav-link header-nav-link--active" aria-current="page">Главная</a>
+                <a href="#" class="header-nav-link">Книги</a>
+                <a href="#" class="header-nav-link">Мои книги</a>
+                <a href="#" class="header-nav-link">О проекте</a>
+            </nav>
+            <button type="button" class="btn-register">
+                <div class="header-btn-register-text">Зарегистрироваться</div>
+                <img src="/assets/icons/header-arrow-toUp.svg" alt="">
+            </button>
+            <div class="lang-switcher">
+                <button type="button" class="lang-switcher-toggle" aria-expanded="false">
+                    RU
+                    <img src="/assets/icons/header-arrow-toDown.svg" alt="" class="arrow">
+                </button>
+                <ul class="lang-switcher-list" hidden>
+                    <li><button type="button" class="lang-switcher-option" data-lang="ru">RU</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="kz">KZ</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="en">EN</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="survey-page">
+        <div class="survey-page__layout">
+
+            <!-- Sidebar -->
+            <aside class="survey-page__sidebar">
+                <div class="survey-page__avatar">
+                    <img src="/assets/images/Avatar_ChildProfile.png" alt="" class="survey-page__avatar--img">
+                </div>
+                <h2 class="survey-page__sidebar-title">Ваше мнение важно!</h2>
+                <p class="survey-page__sidebar-text">Помогите нам сделать мир Чтения лучше для вас и других ребят.</p>
+
+                <div class="survey-page__reward">
+                    <img src="/assets/icons/Gift_Survey.svg" alt="">
+                    <div class="survey-page__reward-text">
+                        <span class="survey-page__reward-line">Спасибо за участие!</span>
+                        <span class="survey-page__reward-line survey-page__reward-line--accent">Получи значок</span>
+                    </div>
+                </div>
+
+                <img src="/assets/images/ChildrenImg_Survey.png" alt="" class="survey-page__sidebar-img-kids">
+                <img src="/assets/images/GrassImg_Survey.png" alt="" class="survey-page__sidebar-img-grass">
+            </aside>
+
+            <!-- Survey card -->
+            <section class="survey-page__card">
+                <img class="survey-page__star survey-page__star--1" src="/assets/images/StarImg_Survey.png" alt="">
+                <img class="survey-page__star survey-page__star--2" src="/assets/images/StarImg_Survey.png" alt="">
+                <img class="survey-page__star survey-page__star--3" src="/assets/images/StarImg_Survey.png" alt="">
+                <img class="survey-page__star survey-page__star--4" src="/assets/images/StarImg_Survey.png" alt="">
+                <img class="survey-page__star survey-page__star--5" src="/assets/images/StarImg_Survey.png" alt="">
+
+                <header class="survey-page__header">
+                    <h1 class="survey-page__title">Опрос по книге</h1>
+                    <p class="survey-page__subtitle">Ответь на несколько вопросов</p>
+                </header>
+
+                <div class="survey-page__questions">
+
+                    <div class="survey-question">
+                        <div class="survey-question__info">
+                            <span class="survey-question__number">1</span>
+                            <p class="survey-question__text">Тебе понравилась книга?</p>
+                        </div>
+                        <div class="survey-question__options" role="radiogroup">
+                            <button class="survey-option survey-option--1" data-rating="1" role="radio" aria-checked="false" aria-label="Супер"><span class="survey-option__face"><img src="/assets/icons/Super_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--2" data-rating="2" role="radio" aria-checked="false" aria-label="Хорошо"><span class="survey-option__face"><img src="/assets/icons/Good_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--3" data-rating="3" role="radio" aria-checked="false" aria-label="Нормально"><span class="survey-option__face"><img src="/assets/icons/Normal_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--4" data-rating="4" role="radio" aria-checked="false" aria-label="Плохо"><span class="survey-option__face"><img src="/assets/icons/Bad_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--5" data-rating="5" role="radio" aria-checked="false" aria-label="Ужасно"><span class="survey-option__face"><img src="/assets/icons/Terrible_SmileIcon.svg" alt=""></span></button>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="survey-question__info">
+                            <span class="survey-question__number">2</span>
+                            <p class="survey-question__text">Было легко слушать?</p>
+                        </div>
+                        <div class="survey-question__options" role="radiogroup">
+                            <button class="survey-option survey-option--1" data-rating="1" role="radio" aria-checked="false" aria-label="Супер"><span class="survey-option__face"><img src="/assets/icons/Super_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--2" data-rating="2" role="radio" aria-checked="false" aria-label="Хорошо"><span class="survey-option__face"><img src="/assets/icons/Good_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--3" data-rating="3" role="radio" aria-checked="false" aria-label="Нормально"><span class="survey-option__face"><img src="/assets/icons/Normal_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--4" data-rating="4" role="radio" aria-checked="false" aria-label="Плохо"><span class="survey-option__face"><img src="/assets/icons/Bad_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--5" data-rating="5" role="radio" aria-checked="false" aria-label="Ужасно"><span class="survey-option__face"><img src="/assets/icons/Terrible_SmileIcon.svg" alt=""></span></button>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="survey-question__info">
+                            <span class="survey-question__number">3</span>
+                            <p class="survey-question__text">Понравился главный герой?</p>
+                        </div>
+                        <div class="survey-question__options" role="radiogroup">
+                            <button class="survey-option survey-option--1" data-rating="1" role="radio" aria-checked="false" aria-label="Супер"><span class="survey-option__face"><img src="/assets/icons/Super_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--2" data-rating="2" role="radio" aria-checked="false" aria-label="Хорошо"><span class="survey-option__face"><img src="/assets/icons/Good_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--3" data-rating="3" role="radio" aria-checked="false" aria-label="Нормально"><span class="survey-option__face"><img src="/assets/icons/Normal_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--4" data-rating="4" role="radio" aria-checked="false" aria-label="Плохо"><span class="survey-option__face"><img src="/assets/icons/Bad_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--5" data-rating="5" role="radio" aria-checked="false" aria-label="Ужасно"><span class="survey-option__face"><img src="/assets/icons/Terrible_SmileIcon.svg" alt=""></span></button>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="survey-question__info">
+                            <span class="survey-question__number">4</span>
+                            <p class="survey-question__text">Ты понял смысл истории?</p>
+                        </div>
+                        <div class="survey-question__options" role="radiogroup">
+                            <button class="survey-option survey-option--1" data-rating="1" role="radio" aria-checked="false" aria-label="Супер"><span class="survey-option__face"><img src="/assets/icons/Super_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--2" data-rating="2" role="radio" aria-checked="false" aria-label="Хорошо"><span class="survey-option__face"><img src="/assets/icons/Good_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--3" data-rating="3" role="radio" aria-checked="false" aria-label="Нормально"><span class="survey-option__face"><img src="/assets/icons/Normal_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--4" data-rating="4" role="radio" aria-checked="false" aria-label="Плохо"><span class="survey-option__face"><img src="/assets/icons/Bad_SmileIcon.svg" alt=""></span></button>
+                            <button class="survey-option survey-option--5" data-rating="5" role="radio" aria-checked="false" aria-label="Ужасно"><span class="survey-option__face"><img src="/assets/icons/Terrible_SmileIcon.svg" alt=""></span></button>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="survey-page__submit-btn">Отправить ответ</button>
+            </section>
+
+        </div>
+        
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-container__brand">
+                <a href="#" class="footer__logo">
+                    <img src="/assets/icons/logo-white.svg" alt="Bizdin Alem" width="186" height="132">
+                </a>
+                <p class="footer__description">“Bizdin Alem” – инклюзия туралы қазақ, орыс және ағылшын тілінде жазылған кітаптарды оқитын балаларға арналған онлайн кітапхана.</p>
+
+                <div class="footer__lang-switcher">
+                    <button type="button" class="footer__lang-toggle" aria-expanded="false">
+                        Русский
+                        <img src="/assets/icons/ArrowToDownLangSwitcher.svg" alt="" class="footer__lang-arrow">
+                    </button>
+                    <ul class="footer__lang-list" hidden>
+                        <li><button type="button" class="footer__lang-option" data-lang="ru">Русский</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="kz">Қазақша</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="en">English</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">КІТАПХАНА</h3>
+                <div class="line"></div>
+                <a href="#" class="footer__nav-link">Басты бет</a>
+                <a href="#" class="footer__nav-link">Кітаптар</a>
+                <a href="#" class="footer__nav-link">Менің кітаптарым</a>
+                <a href="#" class="footer__nav-link">Жоба туралы</a>
+            </nav>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">Контакты</h3>
+                <a href="#" class="footer__nav-link footer__nav-link--margin">@bizdinalem</a>
+            </nav>
+
+        </div>
+    </footer>
+
+</body>
+</html>
