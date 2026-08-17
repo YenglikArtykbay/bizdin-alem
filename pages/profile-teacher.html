@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizdinAlem</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/main.js" defer></script>
+    
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo-container">
+            <a href="#" class="header-logo">
+                <img src="/assets/icons/logo-colored.svg" alt="Bizdin Alem" width="108" height="85">
+            </a>
+        </div>
+        <div class="header-link-container">
+            <nav class="header-nav">
+                <a href="#" class="header-nav-link header-nav-link--active" aria-current="page">Главная</a>
+                <a href="#" class="header-nav-link">Книги</a>
+                <a href="#" class="header-nav-link">Мои книги</a>
+                <a href="#" class="header-nav-link">О проекте</a>
+            </nav>
+            <button type="button" class="btn-register">
+                <div class="header-btn-register-text">Зарегистрироваться</div>
+                <img src="/assets/icons/header-arrow-toUp.svg" alt="">
+            </button>
+            <div class="lang-switcher">
+                <button type="button" class="lang-switcher-toggle" aria-expanded="false">
+                    RU
+                    <img src="/assets/icons/header-arrow-toDown.svg" alt="" class="arrow">
+                </button>
+                <ul class="lang-switcher-list" hidden>
+                    <li><button type="button" class="lang-switcher-option" data-lang="ru">RU</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="kz">KZ</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="en">EN</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="teacher-profile">
+        <div class="teacher-profile__intro">
+
+            <div class="teacher-profile__intro--text">
+                <h1 class="teacher-profile__title">Личный кабинет учителя:</h1>
+                <p class="teacher-profile__subtitle">Добро пожаловать! Здесь вы можете планировать свои уроки</p>
+            </div>
+
+            <img src="/assets/images/TeacherImg_TeacherProfile.png" alt="Teacher image" class="teacher-profile__illustration">
+
+            <div class="teacher-profile__myclass">
+                <div class="myclass__intro">
+                    <div class="myclass__header">
+                        <img src="/assets/icons/PeopleIcon_TeacherProfile.svg" alt="" class="myclass__icon">
+                        <span class="myclass__label">Мой класс</span>
+                    </div>
+                    <p class="myclass__grade">3 “А” класс</p>
+                    <p class="myclass__count">21 ученика</p>
+                </div>
+                <div class="myclass__box">
+                    <img src="/assets/images/Children_TeacherProfile.png" alt="" class="myclass__illustration">
+                    <button type="button" class="myclass__btn">Перейти к классу</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="teacher-profile__grid">
+
+            <!-- Books for lessons -->
+            <div class="teacher-card teacher-card--books">
+                <div class="teacher-card__header">
+                    <h3 class="teacher-card__title">Книги для уроков</h3>
+                    <button type="button" class="teacher-card__arrow-btn" aria-label="Показать ещё">
+                        <img src="/assets/icons/ArrowTeacherProfile.svg" alt="">
+                    </button>
+                </div>
+                <div class="book-row swiper">
+                    <div class="swiper-wrapper">
+                        <div class="book-placeholder swiper-slide">
+                            <div class="book-placeholder__cover"></div>
+                            <span class="book-placeholder__title">Волшебный лес</span>
+                        </div>
+                        <div class="book-placeholder swiper-slide">
+                            <div class="book-placeholder__cover"></div>
+                            <span class="book-placeholder__title">Волшебный лес</span>
+                        </div>
+                        <div class="book-placeholder swiper-slide">
+                            <div class="book-placeholder__cover"></div>
+                            <span class="book-placeholder__title">Волшебный лес</span>
+                        </div>
+                        <div class="book-placeholder swiper-slide">
+                            <div class="book-placeholder__cover"></div>
+                            <span class="book-placeholder__title">Волшебный лес</span>
+                        </div>
+                        <div class="book-placeholder swiper-slide">
+                            <div class="book-placeholder__cover"></div>
+                            <span class="book-placeholder__title">Волшебный лес</span>
+                        </div>
+                        <div class="book-placeholder swiper-slide">
+                            <div class="book-placeholder__cover"></div>
+                            <span class="book-placeholder__title">Волшебный лес</span>
+                        </div>
+                        <div class="book-placeholder swiper-slide">
+                            <div class="book-placeholder__cover"></div>
+                            <span class="book-placeholder__title">Волшебный лес</span>
+                        </div>
+                        <div class="book-placeholder swiper-slide">
+                            <div class="book-placeholder__cover"></div>
+                            <span class="book-placeholder__title">Волшебный лес</span>
+                        </div>
+                        <div class="book-placeholder swiper-slide">
+                            <div class="book-placeholder__cover"></div>
+                            <span class="book-placeholder__title">Волшебный лес</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book themes -->
+            <div class="teacher-card teacher-card--themes">
+                <div class="teacher-card__header">
+                    <h3 class="teacher-card__title">
+                        <img src="/assets/icons/Tag_TeacherProfile.svg" alt="" class="teacher-card__title-icon">
+                        <span>Темы книг</span>
+                    </h3>
+                    <a href="#" class="teacher-card__link">Смотреть все</a>
+                </div>
+                <ul class="theme-list">
+                    <li class="theme-item theme-item--peach">
+                        <img src="/assets/icons/HeartIcon_TeacherProfile.svg" alt="">
+                        Дружба и помощь
+                    </li>
+                    <li class="theme-item theme-item--green">
+                        <img src="/assets/icons/TreeIcon_TeacherProfile.svg" alt="">
+                        Природа и животные
+                    </li>
+                    <li class="theme-item theme-item--blue">
+                        <img src="/assets/icons/GlobusIcon_TeacherProfile.svg" alt="">
+                        Наука и открытия
+                    </li>
+                </ul>
+                <button class="teacher-card__add-btn"><span class="plus">+</span> Добавить тему</button>
+            </div>
+
+            <!-- Discussion questions -->
+            <div class="teacher-card teacher-card--questions">
+                <div class="teacher-card__header">
+                    <h3 class="teacher-card__title">
+                        <img src="/assets/icons/DiscussionsIcon_TeacherProfile.svg" alt="" class="teacher-card__title-icon">
+                        <span>Вопросы для обсуждения</span>
+                    </h3>
+                    <a href="#" class="teacher-card__link">Смотреть все</a>
+                </div>
+                <ul class="question-list">
+                    <li class="question-item">
+                        <span>Почему герои отправились в путешествие на воздушном шаре</span>
+                        <span class="question-item__mark">?</span>
+                    </li>
+                    <li class="question-item">
+                        <span>Почему герои отправились в путешествие на воздушном шаре</span>
+                        <span class="question-item__mark">?</span>
+                    </li>
+                    <li class="question-item">
+                        <span>Почему герои отправились в путешествие на воздушном шаре</span>
+                        <span class="question-item__mark">?</span>
+                    </li>
+                </ul>
+                <button class="teacher-card__add-btn"><span class="plus">+</span> Добавить вопрос</button>
+            </div>
+
+            <!-- Surveys -->
+            <div class="teacher-card teacher-card--surveys">
+                <div class="teacher-card__header">
+                    <h3 class="teacher-card__title">
+                        <img src="/assets/icons/SurveyIcon_ParentProfile.svg" alt="" class="teacher-card__title-icon">
+                        Опросы
+                    </h3>
+                    <a href="#" class="teacher-card__link">Смотреть все</a>
+                </div>
+                <ul class="survey-list">
+                    <li class="survey-item survey-item--blue">
+                        <div>
+                            <p class="survey-item__title">Какая книга больше понравилась?</p>
+                            <p class="survey-item__meta">18 ответов</p>
+                        </div>
+                        <svg class="diagram-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.45833 15.5H1.29167C0.516667 15.5 0 16.0167 0 16.7917V27.125C0 27.9 0.516667 28.4167 1.29167 28.4167H6.45833C7.23333 28.4167 7.75 27.9 7.75 27.125V16.7917C7.75 16.0167 7.23333 15.5 6.45833 15.5ZM27.125 10.3333H21.9583C21.1833 10.3333 20.6667 10.85 20.6667 11.625V27.125C20.6667 27.9 21.1833 28.4167 21.9583 28.4167H27.125C27.9 28.4167 28.4167 27.9 28.4167 27.125V11.625C28.4167 10.85 27.9 10.3333 27.125 10.3333ZM16.7917 0H11.625C10.85 0 10.3333 0.516667 10.3333 1.29167V27.125C10.3333 27.9 10.85 28.4167 11.625 28.4167H16.7917C17.5667 28.4167 18.0833 27.9 18.0833 27.125V1.29167C18.0833 0.516667 17.5667 0 16.7917 0Z" fill="currentColor"/>
+                        </svg>
+                    </li>
+                    <li class="survey-item survey-item--green">
+                        <div>
+                            <p class="survey-item__title">Какая книга больше понравилась?</p>
+                            <p class="survey-item__meta">18 ответов</p>
+                        </div>
+                        <svg class="diagram-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.45833 15.5H1.29167C0.516667 15.5 0 16.0167 0 16.7917V27.125C0 27.9 0.516667 28.4167 1.29167 28.4167H6.45833C7.23333 28.4167 7.75 27.9 7.75 27.125V16.7917C7.75 16.0167 7.23333 15.5 6.45833 15.5ZM27.125 10.3333H21.9583C21.1833 10.3333 20.6667 10.85 20.6667 11.625V27.125C20.6667 27.9 21.1833 28.4167 21.9583 28.4167H27.125C27.9 28.4167 28.4167 27.9 28.4167 27.125V11.625C28.4167 10.85 27.9 10.3333 27.125 10.3333ZM16.7917 0H11.625C10.85 0 10.3333 0.516667 10.3333 1.29167V27.125C10.3333 27.9 10.85 28.4167 11.625 28.4167H16.7917C17.5667 28.4167 18.0833 27.9 18.0833 27.125V1.29167C18.0833 0.516667 17.5667 0 16.7917 0Z" fill="currentColor"/>
+                        </svg>                    
+                    </li>
+                    <li class="survey-item survey-item--peach">
+                        <div>
+                            <p class="survey-item__title">Какая книга больше понравилась?</p>
+                            <p class="survey-item__meta">18 ответов</p>
+                        </div>
+                        <svg class="diagram-icon" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.45833 15.5H1.29167C0.516667 15.5 0 16.0167 0 16.7917V27.125C0 27.9 0.516667 28.4167 1.29167 28.4167H6.45833C7.23333 28.4167 7.75 27.9 7.75 27.125V16.7917C7.75 16.0167 7.23333 15.5 6.45833 15.5ZM27.125 10.3333H21.9583C21.1833 10.3333 20.6667 10.85 20.6667 11.625V27.125C20.6667 27.9 21.1833 28.4167 21.9583 28.4167H27.125C27.9 28.4167 28.4167 27.9 28.4167 27.125V11.625C28.4167 10.85 27.9 10.3333 27.125 10.3333ZM16.7917 0H11.625C10.85 0 10.3333 0.516667 10.3333 1.29167V27.125C10.3333 27.9 10.85 28.4167 11.625 28.4167H16.7917C17.5667 28.4167 18.0833 27.9 18.0833 27.125V1.29167C18.0833 0.516667 17.5667 0 16.7917 0Z" fill="currentColor"/>
+                        </svg> 
+                    </li>
+                </ul>
+                <button class="teacher-card__add-btn"><span class="plus">+</span> Создать опрос</button>
+            </div>
+
+            <!-- Materials -->
+            <div class="teacher-card teacher-card--materials">
+                <div class="teacher-card__header">
+                    <h3 class="teacher-card__title">
+                        <img src="/assets/icons/FileIcon_TeacherProfile.svg" alt="" class="teacher-card__title-icon">
+                        <span>Материалы для учебы</span>
+                    </h3>
+                    <a href="#" class="teacher-card__link">Смотреть все</a>
+                </div>
+                <ul class="material-list">
+                    <li class="material-item material-item--red">
+                        <svg width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.633 25.125H16.078C18.504 25.125 19.711 23.8945 19.711 21.457V10.8165H11.2265C9.7265 10.8165 9.0235 10.1015 9.0235 8.6015V0H3.633C1.219 0 0 1.242 0 3.68V21.457C0 23.906 1.219 25.125 3.633 25.125ZM11.262 9.211H19.582C19.5 8.7305 19.16 8.2615 18.6095 7.6875L12.1405 1.1135C11.6015 0.551 11.1095 0.211 10.617 0.1285V8.5785C10.617 9 10.84 9.211 11.262 9.211ZM5.344 15.891C4.8635 15.891 4.5235 15.551 4.5235 15.094C4.5235 14.6365 4.8635 14.297 5.3435 14.297H14.3785C14.8475 14.297 15.211 14.637 15.211 15.0935C15.211 15.551 14.8475 15.8905 14.379 15.8905L5.344 15.891ZM5.344 20.3555C4.8635 20.3555 4.5235 20.0155 4.5235 19.5585C4.5235 19.1015 4.8635 18.7615 5.3435 18.7615H14.3785C14.8475 18.7615 15.211 19.1015 15.211 19.5585C15.211 20.0155 14.8475 20.3555 14.379 20.3555H5.344Z" fill="currentColor"/>
+                        </svg>
+                        <span class="material-item__title">Рабочий план</span>
+                        <div class="material-item__box">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.1111 11.6316C15.3469 11.6316 15.573 11.7258 15.7397 11.8936C15.9064 12.0614 16 12.289 16 12.5263V14.3158C16 15.0277 15.719 15.7104 15.219 16.2138C14.7189 16.7172 14.0406 17 13.3333 17H2.66667C1.95942 17 1.28115 16.7172 0.781049 16.2138C0.280952 15.7104 0 15.0277 0 14.3158V12.5263C0 12.289 0.0936505 12.0614 0.260349 11.8936C0.427048 11.7258 0.653141 11.6316 0.888889 11.6316C1.12464 11.6316 1.35073 11.7258 1.51743 11.8936C1.68413 12.0614 1.77778 12.289 1.77778 12.5263V14.3158C1.77778 14.5531 1.87143 14.7807 2.03813 14.9485C2.20483 15.1163 2.43092 15.2105 2.66667 15.2105H13.3333C13.5691 15.2105 13.7952 15.1163 13.9619 14.9485C14.1286 14.7807 14.2222 14.5531 14.2222 14.3158V12.5263C14.2222 12.289 14.3159 12.0614 14.4826 11.8936C14.6493 11.7258 14.8754 11.6316 15.1111 11.6316ZM8 0C8.23575 0 8.46184 0.0942666 8.62854 0.262062C8.79524 0.429858 8.88889 0.657438 8.88889 0.894737V9.47079L11.816 6.52532C11.9836 6.36233 12.2082 6.27215 12.4412 6.27419C12.6743 6.27623 12.8973 6.37032 13.0621 6.53621C13.2269 6.70211 13.3204 6.92652 13.3224 7.16111C13.3244 7.39571 13.2348 7.62172 13.0729 7.79047L8.62844 12.2642C8.60323 12.2896 8.57652 12.3135 8.54844 12.3357L8.62844 12.2642C8.4689 12.4246 8.25473 12.518 8.02933 12.5254L8 12.5263H7.97156L7.92356 12.5227L8 12.5263C7.80115 12.5263 7.60805 12.4592 7.45156 12.3357C7.42348 12.3135 7.39677 12.2896 7.37156 12.2642L2.92711 7.79047C2.76519 7.62172 2.6756 7.39571 2.67762 7.16111C2.67965 6.92652 2.77313 6.70211 2.93794 6.53621C3.10275 6.37032 3.32569 6.27623 3.55875 6.27419C3.79182 6.27215 4.01635 6.36233 4.184 6.52532L7.11111 9.47079V0.894737C7.11111 0.657438 7.20476 0.429858 7.37146 0.262062C7.53816 0.0942666 7.76425 0 8 0Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="material-item material-item--green">
+                        <svg width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.633 25.125H16.078C18.504 25.125 19.711 23.8945 19.711 21.457V10.8165H11.2265C9.7265 10.8165 9.0235 10.1015 9.0235 8.6015V0H3.633C1.219 0 0 1.242 0 3.68V21.457C0 23.906 1.219 25.125 3.633 25.125ZM11.262 9.211H19.582C19.5 8.7305 19.16 8.2615 18.6095 7.6875L12.1405 1.1135C11.6015 0.551 11.1095 0.211 10.617 0.1285V8.5785C10.617 9 10.84 9.211 11.262 9.211ZM5.344 15.891C4.8635 15.891 4.5235 15.551 4.5235 15.094C4.5235 14.6365 4.8635 14.297 5.3435 14.297H14.3785C14.8475 14.297 15.211 14.637 15.211 15.0935C15.211 15.551 14.8475 15.8905 14.379 15.8905L5.344 15.891ZM5.344 20.3555C4.8635 20.3555 4.5235 20.0155 4.5235 19.5585C4.5235 19.1015 4.8635 18.7615 5.3435 18.7615H14.3785C14.8475 18.7615 15.211 19.1015 15.211 19.5585C15.211 20.0155 14.8475 20.3555 14.379 20.3555H5.344Z" fill="currentColor"/>
+                        </svg>
+                        <span class="material-item__title">Рабочий план</span>
+                        <div class="material-item__box">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.1111 11.6316C15.3469 11.6316 15.573 11.7258 15.7397 11.8936C15.9064 12.0614 16 12.289 16 12.5263V14.3158C16 15.0277 15.719 15.7104 15.219 16.2138C14.7189 16.7172 14.0406 17 13.3333 17H2.66667C1.95942 17 1.28115 16.7172 0.781049 16.2138C0.280952 15.7104 0 15.0277 0 14.3158V12.5263C0 12.289 0.0936505 12.0614 0.260349 11.8936C0.427048 11.7258 0.653141 11.6316 0.888889 11.6316C1.12464 11.6316 1.35073 11.7258 1.51743 11.8936C1.68413 12.0614 1.77778 12.289 1.77778 12.5263V14.3158C1.77778 14.5531 1.87143 14.7807 2.03813 14.9485C2.20483 15.1163 2.43092 15.2105 2.66667 15.2105H13.3333C13.5691 15.2105 13.7952 15.1163 13.9619 14.9485C14.1286 14.7807 14.2222 14.5531 14.2222 14.3158V12.5263C14.2222 12.289 14.3159 12.0614 14.4826 11.8936C14.6493 11.7258 14.8754 11.6316 15.1111 11.6316ZM8 0C8.23575 0 8.46184 0.0942666 8.62854 0.262062C8.79524 0.429858 8.88889 0.657438 8.88889 0.894737V9.47079L11.816 6.52532C11.9836 6.36233 12.2082 6.27215 12.4412 6.27419C12.6743 6.27623 12.8973 6.37032 13.0621 6.53621C13.2269 6.70211 13.3204 6.92652 13.3224 7.16111C13.3244 7.39571 13.2348 7.62172 13.0729 7.79047L8.62844 12.2642C8.60323 12.2896 8.57652 12.3135 8.54844 12.3357L8.62844 12.2642C8.4689 12.4246 8.25473 12.518 8.02933 12.5254L8 12.5263H7.97156L7.92356 12.5227L8 12.5263C7.80115 12.5263 7.60805 12.4592 7.45156 12.3357C7.42348 12.3135 7.39677 12.2896 7.37156 12.2642L2.92711 7.79047C2.76519 7.62172 2.6756 7.39571 2.67762 7.16111C2.67965 6.92652 2.77313 6.70211 2.93794 6.53621C3.10275 6.37032 3.32569 6.27623 3.55875 6.27419C3.79182 6.27215 4.01635 6.36233 4.184 6.52532L7.11111 9.47079V0.894737C7.11111 0.657438 7.20476 0.429858 7.37146 0.262062C7.53816 0.0942666 7.76425 0 8 0Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="material-item material-item--purple">
+                        <svg width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.633 25.125H16.078C18.504 25.125 19.711 23.8945 19.711 21.457V10.8165H11.2265C9.7265 10.8165 9.0235 10.1015 9.0235 8.6015V0H3.633C1.219 0 0 1.242 0 3.68V21.457C0 23.906 1.219 25.125 3.633 25.125ZM11.262 9.211H19.582C19.5 8.7305 19.16 8.2615 18.6095 7.6875L12.1405 1.1135C11.6015 0.551 11.1095 0.211 10.617 0.1285V8.5785C10.617 9 10.84 9.211 11.262 9.211ZM5.344 15.891C4.8635 15.891 4.5235 15.551 4.5235 15.094C4.5235 14.6365 4.8635 14.297 5.3435 14.297H14.3785C14.8475 14.297 15.211 14.637 15.211 15.0935C15.211 15.551 14.8475 15.8905 14.379 15.8905L5.344 15.891ZM5.344 20.3555C4.8635 20.3555 4.5235 20.0155 4.5235 19.5585C4.5235 19.1015 4.8635 18.7615 5.3435 18.7615H14.3785C14.8475 18.7615 15.211 19.1015 15.211 19.5585C15.211 20.0155 14.8475 20.3555 14.379 20.3555H5.344Z" fill="currentColor"/>
+                        </svg>
+                        <span class="material-item__title">Рабочий план</span>
+                        <div class="material-item__box">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.1111 11.6316C15.3469 11.6316 15.573 11.7258 15.7397 11.8936C15.9064 12.0614 16 12.289 16 12.5263V14.3158C16 15.0277 15.719 15.7104 15.219 16.2138C14.7189 16.7172 14.0406 17 13.3333 17H2.66667C1.95942 17 1.28115 16.7172 0.781049 16.2138C0.280952 15.7104 0 15.0277 0 14.3158V12.5263C0 12.289 0.0936505 12.0614 0.260349 11.8936C0.427048 11.7258 0.653141 11.6316 0.888889 11.6316C1.12464 11.6316 1.35073 11.7258 1.51743 11.8936C1.68413 12.0614 1.77778 12.289 1.77778 12.5263V14.3158C1.77778 14.5531 1.87143 14.7807 2.03813 14.9485C2.20483 15.1163 2.43092 15.2105 2.66667 15.2105H13.3333C13.5691 15.2105 13.7952 15.1163 13.9619 14.9485C14.1286 14.7807 14.2222 14.5531 14.2222 14.3158V12.5263C14.2222 12.289 14.3159 12.0614 14.4826 11.8936C14.6493 11.7258 14.8754 11.6316 15.1111 11.6316ZM8 0C8.23575 0 8.46184 0.0942666 8.62854 0.262062C8.79524 0.429858 8.88889 0.657438 8.88889 0.894737V9.47079L11.816 6.52532C11.9836 6.36233 12.2082 6.27215 12.4412 6.27419C12.6743 6.27623 12.8973 6.37032 13.0621 6.53621C13.2269 6.70211 13.3204 6.92652 13.3224 7.16111C13.3244 7.39571 13.2348 7.62172 13.0729 7.79047L8.62844 12.2642C8.60323 12.2896 8.57652 12.3135 8.54844 12.3357L8.62844 12.2642C8.4689 12.4246 8.25473 12.518 8.02933 12.5254L8 12.5263H7.97156L7.92356 12.5227L8 12.5263C7.80115 12.5263 7.60805 12.4592 7.45156 12.3357C7.42348 12.3135 7.39677 12.2896 7.37156 12.2642L2.92711 7.79047C2.76519 7.62172 2.6756 7.39571 2.67762 7.16111C2.67965 6.92652 2.77313 6.70211 2.93794 6.53621C3.10275 6.37032 3.32569 6.27623 3.55875 6.27419C3.79182 6.27215 4.01635 6.36233 4.184 6.52532L7.11111 9.47079V0.894737C7.11111 0.657438 7.20476 0.429858 7.37146 0.262062C7.53816 0.0942666 7.76425 0 8 0Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="material-item material-item--orange">
+                        <svg width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.633 25.125H16.078C18.504 25.125 19.711 23.8945 19.711 21.457V10.8165H11.2265C9.7265 10.8165 9.0235 10.1015 9.0235 8.6015V0H3.633C1.219 0 0 1.242 0 3.68V21.457C0 23.906 1.219 25.125 3.633 25.125ZM11.262 9.211H19.582C19.5 8.7305 19.16 8.2615 18.6095 7.6875L12.1405 1.1135C11.6015 0.551 11.1095 0.211 10.617 0.1285V8.5785C10.617 9 10.84 9.211 11.262 9.211ZM5.344 15.891C4.8635 15.891 4.5235 15.551 4.5235 15.094C4.5235 14.6365 4.8635 14.297 5.3435 14.297H14.3785C14.8475 14.297 15.211 14.637 15.211 15.0935C15.211 15.551 14.8475 15.8905 14.379 15.8905L5.344 15.891ZM5.344 20.3555C4.8635 20.3555 4.5235 20.0155 4.5235 19.5585C4.5235 19.1015 4.8635 18.7615 5.3435 18.7615H14.3785C14.8475 18.7615 15.211 19.1015 15.211 19.5585C15.211 20.0155 14.8475 20.3555 14.379 20.3555H5.344Z" fill="currentColor"/>
+                        </svg>
+                        <span class="material-item__title">Рабочий план</span>
+                        <div class="material-item__box">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.1111 11.6316C15.3469 11.6316 15.573 11.7258 15.7397 11.8936C15.9064 12.0614 16 12.289 16 12.5263V14.3158C16 15.0277 15.719 15.7104 15.219 16.2138C14.7189 16.7172 14.0406 17 13.3333 17H2.66667C1.95942 17 1.28115 16.7172 0.781049 16.2138C0.280952 15.7104 0 15.0277 0 14.3158V12.5263C0 12.289 0.0936505 12.0614 0.260349 11.8936C0.427048 11.7258 0.653141 11.6316 0.888889 11.6316C1.12464 11.6316 1.35073 11.7258 1.51743 11.8936C1.68413 12.0614 1.77778 12.289 1.77778 12.5263V14.3158C1.77778 14.5531 1.87143 14.7807 2.03813 14.9485C2.20483 15.1163 2.43092 15.2105 2.66667 15.2105H13.3333C13.5691 15.2105 13.7952 15.1163 13.9619 14.9485C14.1286 14.7807 14.2222 14.5531 14.2222 14.3158V12.5263C14.2222 12.289 14.3159 12.0614 14.4826 11.8936C14.6493 11.7258 14.8754 11.6316 15.1111 11.6316ZM8 0C8.23575 0 8.46184 0.0942666 8.62854 0.262062C8.79524 0.429858 8.88889 0.657438 8.88889 0.894737V9.47079L11.816 6.52532C11.9836 6.36233 12.2082 6.27215 12.4412 6.27419C12.6743 6.27623 12.8973 6.37032 13.0621 6.53621C13.2269 6.70211 13.3204 6.92652 13.3224 7.16111C13.3244 7.39571 13.2348 7.62172 13.0729 7.79047L8.62844 12.2642C8.60323 12.2896 8.57652 12.3135 8.54844 12.3357L8.62844 12.2642C8.4689 12.4246 8.25473 12.518 8.02933 12.5254L8 12.5263H7.97156L7.92356 12.5227L8 12.5263C7.80115 12.5263 7.60805 12.4592 7.45156 12.3357C7.42348 12.3135 7.39677 12.2896 7.37156 12.2642L2.92711 7.79047C2.76519 7.62172 2.6756 7.39571 2.67762 7.16111C2.67965 6.92652 2.77313 6.70211 2.93794 6.53621C3.10275 6.37032 3.32569 6.27623 3.55875 6.27419C3.79182 6.27215 4.01635 6.36233 4.184 6.52532L7.11111 9.47079V0.894737C7.11111 0.657438 7.20476 0.429858 7.37146 0.262062C7.53816 0.0942666 7.76425 0 8 0Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                    </li>
+                </ul>
+                <button class="teacher-card__add-btn"><span class="plus">+</span> Загрузить материал</button>
+            </div>
+
+            <!-- Collections -->
+            <div class="teacher-card teacher-card--collections">
+                <div class="teacher-card__header">
+                    <h3 class="teacher-card__title">
+                        <img src="/assets/icons/StarIcon.svg" alt="" class="teacher-card__title-icon">
+                        <span>Подборки для класса</span>
+                    </h3>
+                    <a href="#" class="teacher-card__link">Смотреть все</a>
+                </div>
+                <div class="collection-swiper swiper">
+                    <div class="swiper-wrapper">
+                        <div class="collection-item swiper-slide">
+                            <div class="collection-item__cover"></div>
+                            <div class="collection-item__text">
+                                <p class="collection-item__title">Книги о дружбе</p>
+                                <p class="collection-item__meta">8 книг</p>
+                            </div>
+                        </div>
+                        <div class="collection-item swiper-slide">
+                            <div class="collection-item__cover"></div>
+                            <div class="collection-item__text">
+                                <p class="collection-item__title">Книги о дружбе</p>
+                                <p class="collection-item__meta">8 книг</p>
+                            </div>
+                        </div>
+                        <div class="collection-item swiper-slide">
+                            <div class="collection-item__cover"></div>
+                            <div class="collection-item__text">
+                                <p class="collection-item__title">Книги о дружбе</p>
+                                <p class="collection-item__meta">8 книг</p>
+                            </div>
+                        </div>
+                        <div class="collection-item swiper-slide">
+                            <div class="collection-item__cover"></div>
+                            <div class="collection-item__text">
+                                <p class="collection-item__title">Книги о дружбе</p>
+                                <p class="collection-item__meta">8 книг</p>
+                            </div>
+                        </div>
+                        <div class="collection-item swiper-slide">
+                            <div class="collection-item__cover"></div>
+                            <div class="collection-item__text">
+                                <p class="collection-item__title">Книги о дружбе</p>
+                                <p class="collection-item__meta">8 книг</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <button class="teacher-card__add-btn"><span class="plus">+</span> Создать подборку</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-container__brand">
+                <a href="#" class="footer__logo">
+                    <img src="/assets/icons/logo-white.svg" alt="Bizdin Alem" width="186" height="132">
+                </a>
+                <p class="footer__description">“Bizdin Alem” – инклюзия туралы қазақ, орыс және ағылшын тілінде жазылған кітаптарды оқитын балаларға арналған онлайн кітапхана.</p>
+
+                <div class="footer__lang-switcher">
+                    <button type="button" class="footer__lang-toggle" aria-expanded="false">
+                        Русский
+                        <img src="/assets/icons/ArrowToDownLangSwitcher.svg" alt="" class="footer__lang-arrow">
+                    </button>
+                    <ul class="footer__lang-list" hidden>
+                        <li><button type="button" class="footer__lang-option" data-lang="ru">Русский</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="kz">Қазақша</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="en">English</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">КІТАПХАНА</h3>
+                <div class="line"></div>
+                <a href="#" class="footer__nav-link">Басты бет</a>
+                <a href="#" class="footer__nav-link">Кітаптар</a>
+                <a href="#" class="footer__nav-link">Менің кітаптарым</a>
+                <a href="#" class="footer__nav-link">Жоба туралы</a>
+            </nav>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">Контакты</h3>
+                <a href="#" class="footer__nav-link footer__nav-link--margin">@bizdinalem</a>
+            </nav>
+
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -108,3 +108,28 @@ if (badgesSwiperEl) {
         spaceBetween: 20,
     });
 }
+
+// Teacher profile swiper
+const bookRowEl = document.querySelector('.teacher-card--books .book-row');
+if (bookRowEl) {
+    new Swiper(bookRowEl, {
+        slidesPerView: 'auto',
+        spaceBetween: 26,
+        freeMode: true, 
+    });
+}
+
+const collectionSwiperEl = document.querySelector('.teacher-card--collections .collection-swiper');
+if (collectionSwiperEl) {
+    new Swiper(collectionSwiperEl, {
+        slidesPerView: 'auto',
+        watchOverflow: false,
+        spaceBetween: 36,
+        longSwipesRatio: 0.15,
+        slidesOffsetAfter: 26,
+        pagination: {
+            el: collectionSwiperEl.querySelector('.swiper-pagination'),
+            clickable: true,
+        },
+    });
+}
