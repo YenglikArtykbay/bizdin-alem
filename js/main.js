@@ -4,33 +4,32 @@ const langList = document.querySelector('.lang-switcher-list');
 const langOptions = document.querySelectorAll('.lang-switcher-option');
 const langArrow = document.querySelector('.arrow');
 
-langToggle.addEventListener('click', () => {
-    const isOpen = langToggle.getAttribute('aria-expanded') === 'true';
-
-    langList.hidden = isOpen;
-    langToggle.setAttribute('aria-expanded', String(!isOpen));
-    langArrow.classList.toggle('arrow--rotated', !isOpen);
-});
-
-// закрытие при клике вне блока
-document.addEventListener('click', (e) => {
-    if (!langSwitcher.contains(e.target)) {
-        langList.hidden = true;
-        langToggle.setAttribute('aria-expanded', 'false');
-        langArrow.classList.remove('arrow--rotated');
-    }
-});
-
-// выбор языка
-langOptions.forEach(option => {
-    option.addEventListener('click', () => {
-        const selectedLang = option.dataset.lang;
-        langToggle.firstChild.textContent = selectedLang.toUpperCase() + ' ';
-        langList.hidden = true;
-        langToggle.setAttribute('aria-expanded', 'false');
-        langArrow.classList.remove('arrow--rotated');
+if (langToggle) {
+    langToggle.addEventListener('click', () => {
+        const isOpen = langToggle.getAttribute('aria-expanded') === 'true';
+        langList.hidden = isOpen;
+        langToggle.setAttribute('aria-expanded', String(!isOpen));
+        langArrow.classList.toggle('arrow--rotated', !isOpen);
     });
-});
+
+    document.addEventListener('click', (e) => {
+        if (!langSwitcher.contains(e.target)) {
+            langList.hidden = true;
+            langToggle.setAttribute('aria-expanded', 'false');
+            langArrow.classList.remove('arrow--rotated');
+        }
+    });
+
+    langOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const selectedLang = option.dataset.lang;
+            langToggle.firstChild.textContent = selectedLang.toUpperCase() + ' ';
+            langList.hidden = true;
+            langToggle.setAttribute('aria-expanded', 'false');
+            langArrow.classList.remove('arrow--rotated');
+        });
+    });
+}
 
 const heroSliderEl = document.querySelector('.hero-slider');
 if (heroSliderEl) {
@@ -61,33 +60,33 @@ const footerLangList = document.querySelector('.footer__lang-list');
 const footerLangOptions = document.querySelectorAll('.footer__lang-option');
 const footerLangArrow = document.querySelector('.footer__lang-arrow');
 
-footerLangToggle.addEventListener('click', () => {
-    const isOpen = footerLangToggle.getAttribute('aria-expanded') === 'true';
-    footerLangList.hidden = isOpen;
-    footerLangToggle.setAttribute('aria-expanded', String(!isOpen));
-    footerLangArrow.classList.toggle('arrow--rotated', !isOpen);
-});
-
-document.addEventListener('click', (e) => {
-    if (!footerLangSwitcher.contains(e.target)) {
-        footerLangList.hidden = true;
-        footerLangToggle.setAttribute('aria-expanded', 'false');
-    }
-});
-
-footerLangOptions.forEach(option => {
-    option.addEventListener('click', () => {
-        const selectedLang = option.textContent;
-        footerLangToggle.firstChild.textContent = selectedLang + ' ';
-        footerLangList.hidden = true;
-        footerLangToggle.setAttribute('aria-expanded', 'false');
+if (footerLangToggle) {
+    footerLangToggle.addEventListener('click', () => {
+        const isOpen = footerLangToggle.getAttribute('aria-expanded') === 'true';
+        footerLangList.hidden = isOpen;
+        footerLangToggle.setAttribute('aria-expanded', String(!isOpen));
+        footerLangArrow.classList.toggle('arrow--rotated', !isOpen);
     });
-});
+
+    document.addEventListener('click', (e) => {
+        if (!footerLangSwitcher.contains(e.target)) {
+            footerLangList.hidden = true;
+            footerLangToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    footerLangOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const selectedLang = option.textContent;
+            footerLangToggle.firstChild.textContent = selectedLang + ' ';
+            footerLangList.hidden = true;
+            footerLangToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
 
 
-//Profile Child swiper 
-
-// Общие свайперы карточек с книгами (с пагинацией)
+// Profile Child swiper
 document.querySelectorAll('.info-card__swiper').forEach((swiperEl) => {
     new Swiper(swiperEl, {
         slidesPerView: 3,
@@ -99,8 +98,6 @@ document.querySelectorAll('.info-card__swiper').forEach((swiperEl) => {
     });
 });
 
-// Свайпер значков (без пагинации, дробный slidesPerView)
-
 const badgesSwiperEl = document.querySelector('.info-card__swiper-badges');
 if (badgesSwiperEl) {
     new Swiper(badgesSwiperEl, {
@@ -109,13 +106,13 @@ if (badgesSwiperEl) {
     });
 }
 
-// Teacher profile swiper
 const bookRowEl = document.querySelector('.teacher-card--books .book-row');
 if (bookRowEl) {
     new Swiper(bookRowEl, {
         slidesPerView: 'auto',
         spaceBetween: 26,
-        freeMode: true, 
+        freeMode: true,
+        slidesOffsetAfter: 26,
     });
 }
 
@@ -135,15 +132,13 @@ if (collectionSwiperEl) {
 }
 
 
-// Survey page — логика опроса
-
+// Survey page
 const surveyCard = document.querySelector('.survey-page__card');
 
 if (surveyCard) {
     const questionGroups = surveyCard.querySelectorAll('.survey-question__options');
     const submitBtn = surveyCard.querySelector('.survey-page__submit-btn');
 
-    // Выбор смайлика в каждом вопросе
     questionGroups.forEach((group) => {
         group.addEventListener('click', (e) => {
             const btn = e.target.closest('.survey-option');
@@ -159,7 +154,6 @@ if (surveyCard) {
         });
     });
 
-    // Сбор и отправка ответа
     submitBtn?.addEventListener('click', () => {
         const answers = [];
         let allAnswered = true;
@@ -182,6 +176,119 @@ if (surveyCard) {
         }
 
         console.log('Ответы опроса:', answers);
-        alert('Спасибо за участие! (пока просто в консоли — бэк подключит отправку)');
+        alert('Спасибо за участие!');
+    });
+}
+
+
+// Registration page
+const registrationBox = document.querySelector('.registration-box');
+
+if (registrationBox) {
+    const layout = registrationBox.closest('.registration__layout');
+
+    const roleOptions = registrationBox.querySelectorAll('.registration-box__option');
+    const childNameGroup = registrationBox.querySelector('.form-group--child-name');
+    const schoolGroup = registrationBox.querySelector('.form-group--school');
+    const rewardBlock = registrationBox.querySelector('.registration-reward');
+    const form = registrationBox.querySelector('.registration-form');
+
+    const headerSubtitleEl = layout?.querySelector('[data-role-header-subtitle]');
+    const formSubtitleEl = registrationBox.querySelector('[data-role-form-subtitle]');
+
+    const decorBlocks = layout?.querySelectorAll('[data-role-decor]') ?? [];
+    const characterBlocks = layout?.querySelectorAll('[data-role-character]') ?? [];
+
+    let selectedRole = null;
+
+    const roleContent = {
+        child: {
+            headerSubtitle: 'создай аккаунт и открой мир интересных книг.',
+            formSubtitle: 'Создай свой аккаунт и начни читать уже сегодня.',
+        },
+        parent: {
+            headerSubtitle: 'создай аккаунт и читай книги вместе с ребёнком.',
+            formSubtitle: 'Создай свой аккаунт, чтобы  начать читать книги с ребенком уже сегодня.',
+        },
+        teacher: {
+            headerSubtitle: 'создай аккаунт и открой мир интересных книг.',
+            formSubtitle: 'Создай свой аккаунт и начни читать уже сегодня.',
+        },
+    };
+
+    function selectRole(role) {
+        selectedRole = role;
+
+        roleOptions.forEach((opt) => {
+            opt.classList.remove('registration-box__option--selected');
+            opt.setAttribute('aria-checked', 'false');
+        });
+        const activeOption = registrationBox.querySelector(`[data-role="${role}"]`);
+        activeOption?.classList.add('registration-box__option--selected');
+        activeOption?.setAttribute('aria-checked', 'true');
+
+        if (childNameGroup) childNameGroup.hidden = role !== 'parent';
+        if (schoolGroup) schoolGroup.hidden = role !== 'teacher';
+        if (rewardBlock) rewardBlock.hidden = role !== 'child';
+
+        const content = roleContent[role];
+        if (content) {
+            if (headerSubtitleEl) headerSubtitleEl.textContent = content.headerSubtitle;
+            if (formSubtitleEl) formSubtitleEl.textContent = content.formSubtitle;
+        }
+
+        decorBlocks.forEach((block) => {
+            block.hidden = block.dataset.roleDecor !== role;
+        });
+        characterBlocks.forEach((block) => {
+            block.hidden = block.dataset.roleCharacter !== role;
+        });
+    }
+
+    roleOptions.forEach((opt) => {
+        const role = opt.dataset.role;
+
+        opt.addEventListener('click', () => selectRole(role));
+
+        opt.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                selectRole(role);
+            }
+        });
+    });
+
+    selectRole('parent');
+
+    form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const payload = {
+            role: selectedRole,
+            fullName: formData.get('fullName'),
+            email: formData.get('email'),
+            password: formData.get('password'),
+            passwordConfirm: formData.get('passwordConfirm'),
+            agree: formData.get('agree') === 'on',
+        };
+
+        if (selectedRole === 'parent') {
+            payload.childName = formData.get('childName');
+        }
+        if (selectedRole === 'teacher') {
+            payload.school = formData.get('school');
+        }
+
+        if (payload.password !== payload.passwordConfirm) {
+            alert('Пароли не совпадают');
+            return;
+        }
+        if (!payload.agree) {
+            alert('Нужно согласиться с правилами сайта');
+            return;
+        }
+
+        console.log('Регистрация:', payload);
     });
 }
