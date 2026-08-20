@@ -312,9 +312,15 @@ if (lwGallery) {
 const lwStoryText = document.getElementById('lwStoryText');
 const lwCharCount = document.getElementById('lwCharCount');
 
+// Функция подсчета слов
+function countWords(text) {
+    const trimmed = text.trim();
+    return trimmed ? trimmed.split(/\s+/).length : 0;
+}
+
 if (lwStoryText && lwCharCount) {
     lwStoryText.addEventListener('input', () => {
-        lwCharCount.textContent = lwStoryText.value.length;
+        lwCharCount.textContent = countWords(lwStoryText.value);
     });
 
     document.querySelectorAll('.lw-hint').forEach((hint) => {
@@ -339,7 +345,7 @@ lwSaveBtn?.addEventListener('click', () => {
     }
 
     console.log('Сохранено:', { title, text });
-    alert('История сохранена! (пока просто в консоли — бэк подключит сохранение)');
+    alert('История сохранена!');
 });
 
 const lwBackBtn = document.getElementById('lwBackBtn');

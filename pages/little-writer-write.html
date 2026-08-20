@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizdinAlem</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/main.js" defer></script>
+    
+</head>
+<body class="little-writer__body">
+    <header class="header">
+        <div class="header-logo-container">
+            <a href="#" class="header-logo">
+                <img src="/assets/icons/logo-colored.svg" alt="Bizdin Alem" width="108" height="85">
+            </a>
+        </div>
+        <div class="header-link-container">
+            <nav class="header-nav">
+                <a href="#" class="header-nav-link header-nav-link--active" aria-current="page">Главная</a>
+                <a href="#" class="header-nav-link">Книги</a>
+                <a href="#" class="header-nav-link">Мои книги</a>
+                <a href="#" class="header-nav-link">О проекте</a>
+            </nav>
+            <button type="button" class="btn-register">
+                <div class="header-btn-register-text">Зарегистрироваться</div>
+                <img src="/assets/icons/header-arrow-toUp.svg" alt="">
+            </button>
+            <div class="lang-switcher">
+                <button type="button" class="lang-switcher-toggle" aria-expanded="false">
+                    RU
+                    <img src="/assets/icons/header-arrow-toDown.svg" alt="" class="arrow">
+                </button>
+                <ul class="lang-switcher-list" hidden>
+                    <li><button type="button" class="lang-switcher-option" data-lang="ru">RU</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="kz">KZ</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="en">EN</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="lw-write">
+        <img src="/assets/icons/OrnamentDecor_LittleWriterWrite.svg" alt="" class="lw-writer__decor">
+
+        <div class="lw-write__hints">
+            <h2 class="lw-write__hints--title">Подсказки для автора</h2>
+            <div class="lw-write__hints--list">
+                <button type="button" class="lw-hint">
+                    <img src="/assets/icons/User_LWwriteIcon.svg" alt="">
+                    Кто главный герой?
+                </button>
+                <button type="button" class="lw-hint">
+                    <img src="/assets/icons/Place_LWwriteIcon.svg" alt="">
+                    Где начинается история?
+                </button>
+                <button type="button" class="lw-hint">
+                    <img src="/assets/icons/Question_LWwriteIcon.svg" alt="">
+                    Что неожиданного произошло?
+                </button>
+                <button type="button" class="lw-hint">
+                    <img src="/assets/icons/EndFlag_LWwriteIcon.svg" alt="">
+                    Чем всё закончилось?
+                </button>
+            </div>
+        </div>
+
+        <div class="lw-write__body">
+            <img src="/assets/icons/Ornament_FormWriter.svg" alt="" class="lw-write__body--decor">
+            <div class="lw-write__picture">
+                <img src="/assets/images/SelectedPic_LittleWriter.png" alt="Выбранная картинка" id="lwSelectedImage">
+            </div>
+            
+            <div class="lw-write__division-line"></div>
+
+            <div class="lw-write__form">
+                <label for="lwStoryTitle" class="lw-write__label">Придумай название истории</label>
+                <input type="text" id="lwStoryTitle" class="lw-write__title-input"> 
+
+                <label for="lwStoryText" class="lw-write__label">Напиши свою историю</label>
+                <div class="lw-write__textarea-wrapper">
+                    <textarea id="lwStoryText" class="lw-write__textarea" maxlength="1000"></textarea>
+                    <span class="lw-write__counter"><span id="lwCharCount">0</span>/1000 слов</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="lw-write__actions">
+            <button type="button" class="lw-write__btn" id="lwSaveBtn">
+                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.583333" y="0.583333" width="19.8333" height="19.8333" rx="9.91667" stroke="currentColor" stroke-width="1.16667"/>
+                <path d="M10.5 3.89062V17.1128" stroke="currentColor" stroke-width="1.16667"/>
+                <path d="M17.1094 10.4961L3.88715 10.4961" stroke="currentColor" stroke-width="1.16667"/>
+                </svg>
+                Сохранить историю
+            </button>
+            <button type="button" class="lw-write__btn" id="lwLaterBtn">
+                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6186 2.67151C12.6186 2.67151 12.7299 4.57767 14.4115 6.25838C16.0932 7.94005 17.9984 8.05229 17.9984 8.05229L18.8954 7.15533C19.6089 6.4418 20.0098 5.47404 20.0098 4.46494C20.0098 3.45585 19.6089 2.48809 18.8954 1.77455C18.1818 1.06102 17.2141 0.660156 16.205 0.660156C15.1959 0.660156 14.2281 1.06102 13.5146 1.77455L12.6176 2.67151L10.3341 4.95503M17.9984 8.05133L12.9089 13.1428L9.90837 16.1414L9.75355 16.2971C9.19428 16.8555 8.91465 17.1351 8.60696 17.375C8.24365 17.6582 7.85078 17.9012 7.4352 18.0998C7.083 18.2672 6.70854 18.392 5.95865 18.6416L2.78398 19.7002M2.78398 19.7002L2.00797 19.9595C1.82709 20.0201 1.63286 20.0291 1.44714 19.9855C1.26142 19.9418 1.09156 19.8472 0.956655 19.7123C0.821749 19.5774 0.727145 19.4075 0.683477 19.2218C0.639809 19.0361 0.648809 18.8419 0.709463 18.661L0.968778 17.885M2.78398 19.7002L0.968778 17.885M0.968778 17.885L2.02732 14.7103C2.27696 13.9604 2.40178 13.586 2.56918 13.2338C2.7685 12.8164 3.01008 12.4258 3.2939 12.062C3.53387 11.7543 3.8135 11.4747 4.3718 10.9164L6.94753 8.3416" stroke="currentColor" stroke-width="1.31944" stroke-linecap="round"/>
+                </svg>
+                Продолжить позже
+            </button>
+            <button type="button" class="lw-write__btn" id="lwBackBtn">
+                <svg width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.414 5.707L0.707 6.414L0 5.707L0.707 5L1.414 5.707ZM18.414 13.707C18.414 13.9722 18.3086 14.2266 18.1211 14.4141C17.9336 14.6016 17.6792 14.707 17.414 14.707C17.1488 14.707 16.8944 14.6016 16.7069 14.4141C16.5194 14.2266 16.414 13.9722 16.414 13.707H18.414ZM5.707 11.414L0.707 6.414L2.121 5L7.121 10L5.707 11.414ZM0.707 5L5.707 0L7.121 1.414L2.121 6.414L0.707 5ZM1.414 4.707H11.414V6.707H1.414V4.707ZM18.414 11.707V13.707H16.414V11.707H18.414ZM11.414 4.707C13.2705 4.707 15.051 5.4445 16.3637 6.75725C17.6765 8.07001 18.414 9.85048 18.414 11.707H16.414C16.414 10.3809 15.8872 9.10915 14.9495 8.17147C14.0119 7.23378 12.7401 6.707 11.414 6.707V4.707Z" fill="currentColor"/>
+                </svg>
+                Назад к картинкам
+            </button>
+        </div> 
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-container__brand">
+                <a href="#" class="footer__logo">
+                    <img src="/assets/icons/logo-white.svg" alt="Bizdin Alem" width="186" height="132">
+                </a>
+                <p class="footer__description">“Bizdin Alem” – инклюзия туралы қазақ, орыс және ағылшын тілінде жазылған кітаптарды оқитын балаларға арналған онлайн кітапхана.</p>
+
+                <div class="footer__lang-switcher">
+                    <button type="button" class="footer__lang-toggle" aria-expanded="false">
+                        Русский
+                        <img src="/assets/icons/ArrowToDownLangSwitcher.svg" alt="" class="footer__lang-arrow">
+                    </button>
+                    <ul class="footer__lang-list" hidden>
+                        <li><button type="button" class="footer__lang-option" data-lang="ru">Русский</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="kz">Қазақша</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="en">English</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">КІТАПХАНА</h3>
+                <div class="line"></div>
+                <a href="#" class="footer__nav-link">Басты бет</a>
+                <a href="#" class="footer__nav-link">Кітаптар</a>
+                <a href="#" class="footer__nav-link">Менің кітаптарым</a>
+                <a href="#" class="footer__nav-link">Жоба туралы</a>
+            </nav>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">Контакты</h3>
+                <a href="#" class="footer__nav-link footer__nav-link--margin">@bizdinalem</a>
+            </nav>
+
+        </div>
+    </footer>
+
+</body>
+</html>
