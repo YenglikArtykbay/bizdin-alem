@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizdinAlem</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/main.js" defer></script>
+    
+</head>
+<body class="little-writer__body">
+    <header class="header">
+        <div class="header-logo-container">
+            <a href="#" class="header-logo">
+                <img src="/assets/icons/logo-colored.svg" alt="Bizdin Alem" width="108" height="85">
+            </a>
+        </div>
+        <div class="header-link-container">
+            <nav class="header-nav">
+                <a href="#" class="header-nav-link header-nav-link--active" aria-current="page">Главная</a>
+                <a href="#" class="header-nav-link">Книги</a>
+                <a href="#" class="header-nav-link">Мои книги</a>
+                <a href="#" class="header-nav-link">О проекте</a>
+            </nav>
+            <button type="button" class="btn-register">
+                <div class="header-btn-register-text">Зарегистрироваться</div>
+                <img src="/assets/icons/header-arrow-toUp.svg" alt="">
+            </button>
+            <div class="lang-switcher">
+                <button type="button" class="lang-switcher-toggle" aria-expanded="false">
+                    RU
+                    <img src="/assets/icons/header-arrow-toDown.svg" alt="" class="arrow">
+                </button>
+                <ul class="lang-switcher-list" hidden>
+                    <li><button type="button" class="lang-switcher-option" data-lang="ru">RU</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="kz">KZ</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="en">EN</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="little-writer">
+
+        <!-- Hero -->
+        <section class="lw-hero">
+            <div class="lw-hero__content">
+                <h1 class="lw-hero__title">Маленький <br>писатель</h1>
+                <p class="lw-hero__subtitle">Придумывай свои истории по картинкам, <br>развивай воображение и становись <br>настоящим автором.</p>
+                <button type="button" class="lw-hero__btn">
+                    <img src="/assets/icons/Pencil_Little-writer.svg" alt="">
+                    Начать писать
+                </button>
+            </div>
+            <img src="/assets/icons/ornamentOnHeroBanner.svg" alt="" class="lw-hero__decor">
+            <img src="/assets/images/little-writer_IMG.png" alt="" class="lw-hero__img">
+        </section>
+
+        <section class="lw-steps">
+            <h2 class="lw-steps__title">Как создать свою историю?</h2>
+            <p class="lw-steps__subtitle">Всего три простых шага - и ты станешь настоящим автором своей сказки</p>
+
+            <div class="lw-steps__grid">
+                <div class="lw-step">
+                    <img src="/assets/images/Step1_LittleWriter.png" alt="" class="lw-step__img">
+                    <span class="lw-step__number">1</span>
+                    <h3 class="lw-step__title">Выбери картинку</h3>
+                    <p class="lw-step__desc">Выбери понравившуюся иллюстрацию, которая вдохновит тебя на создание собственной истории.</p>
+                </div>
+
+                <div class="lw-step">
+                    <img src="/assets/images/Step2_LittleWriter.png" alt="" class="lw-step__img">
+                    <span class="lw-step__number">2</span>
+                    <h3 class="lw-step__title">Напиши историю</h3>
+                    <p class="lw-step__desc">Придумай интересный сюжет, добавь любимых героев и дай волю своей фантазии.</p>
+                </div>
+
+                <div class="lw-step">
+                    <img src="/assets/images/Step3_LittleWriter.png" alt="" class="lw-step__img">
+                    <span class="lw-step__number">3</span>
+                    <h3 class="lw-step__title">Сохрани и поделись</h3>
+                    <p class="lw-step__desc">Сохрани свою историю в личной библиотеке, возвращайся к ней в любое время или поделись ею с друзьями и близкими.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Choose a picture -->
+        <section class="lw-gallery">
+            <h2 class="lw-gallery__title">Выбери картинку для своей истории</h2>
+            <p class="lw-gallery__subtitle">Нажми на понравившуюся картинку и придумай, что произошло</p>
+
+            <div class="lw-gallery__grid">
+                <button type="button" class="lw-gallery__item lw-gallery__item--1" data-image-id="1">
+                    <img src="/assets/images/Pic1_LittleWriter.png" alt="Картинка 1">
+                </button>
+                <button type="button" class="lw-gallery__item lw-gallery__item--2" data-image-id="2">
+                    <img src="/assets/images/Pic2_LittleWriter.png" alt="Картинка 2">
+                </button>
+                <button type="button" class="lw-gallery__item lw-gallery__item--3" data-image-id="3">
+                    <img src="/assets/images/Pic3_LittleWriter.png" alt="Картинка 3">
+                </button>
+                <button type="button" class="lw-gallery__item lw-gallery__item--4" data-image-id="4">
+                    <img src="/assets/images/Pic4_LittleWriter.png" alt="Картинка 4">
+                </button>
+                <button type="button" class="lw-gallery__item lw-gallery__item--5" data-image-id="5">
+                    <img src="/assets/images/Pic5_LittleWriter.png" alt="Картинка 5">
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-container__brand">
+                <a href="#" class="footer__logo">
+                    <img src="/assets/icons/logo-white.svg" alt="Bizdin Alem" width="186" height="132">
+                </a>
+                <p class="footer__description">“Bizdin Alem” – инклюзия туралы қазақ, орыс және ағылшын тілінде жазылған кітаптарды оқитын балаларға арналған онлайн кітапхана.</p>
+
+                <div class="footer__lang-switcher">
+                    <button type="button" class="footer__lang-toggle" aria-expanded="false">
+                        Русский
+                        <img src="/assets/icons/ArrowToDownLangSwitcher.svg" alt="" class="footer__lang-arrow">
+                    </button>
+                    <ul class="footer__lang-list" hidden>
+                        <li><button type="button" class="footer__lang-option" data-lang="ru">Русский</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="kz">Қазақша</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="en">English</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">КІТАПХАНА</h3>
+                <div class="line"></div>
+                <a href="#" class="footer__nav-link">Басты бет</a>
+                <a href="#" class="footer__nav-link">Кітаптар</a>
+                <a href="#" class="footer__nav-link">Менің кітаптарым</a>
+                <a href="#" class="footer__nav-link">Жоба туралы</a>
+            </nav>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">Контакты</h3>
+                <a href="#" class="footer__nav-link footer__nav-link--margin">@bizdinalem</a>
+            </nav>
+
+        </div>
+    </footer>
+
+</body>
+</html>

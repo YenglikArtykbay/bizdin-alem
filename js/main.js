@@ -292,3 +292,57 @@ if (registrationBox) {
         console.log('Регистрация:', payload);
     });
 }
+
+// Little Writer — landing gallery selection
+const lwGallery = document.querySelector('.lw-gallery__grid');
+if (lwGallery) {
+    lwGallery.addEventListener('click', (e) => {
+        const item = e.target.closest('.lw-gallery__item');
+        if (!item) return;
+
+        lwGallery.querySelectorAll('.lw-gallery__item').forEach((el) => {
+            el.classList.remove('lw-gallery__item--selected');
+        });
+        item.classList.add('lw-gallery__item--selected');
+
+    });
+}
+
+// Little Writer — write page: подсказки вставляют текст, счётчик символов
+const lwStoryText = document.getElementById('lwStoryText');
+const lwCharCount = document.getElementById('lwCharCount');
+
+if (lwStoryText && lwCharCount) {
+    lwStoryText.addEventListener('input', () => {
+        lwCharCount.textContent = lwStoryText.value.length;
+    });
+
+    document.querySelectorAll('.lw-hint').forEach((hint) => {
+        hint.addEventListener('click', () => {
+            const hintText = hint.textContent.trim();
+            const separator = lwStoryText.value.trim() ? '\n\n' : '';
+            lwStoryText.value += `${separator}${hintText} `;
+            lwStoryText.dispatchEvent(new Event('input'));
+            lwStoryText.focus();
+        });
+    });
+}
+
+const lwSaveBtn = document.getElementById('lwSaveBtn');
+lwSaveBtn?.addEventListener('click', () => {
+    const title = document.getElementById('lwStoryTitle')?.value.trim();
+    const text = document.getElementById('lwStoryText')?.value.trim();
+
+    if (!title || !text) {
+        alert('Придумай название и напиши хотя бы немного текста перед сохранением!');
+        return;
+    }
+
+    console.log('Сохранено:', { title, text });
+    alert('История сохранена! (пока просто в консоли — бэк подключит сохранение)');
+});
+
+const lwBackBtn = document.getElementById('lwBackBtn');
+lwBackBtn?.addEventListener('click', () => {
+    window.location.href = '/pages/little-writer.html';
+});
