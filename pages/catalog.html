@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizdinAlem</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/main.js" defer></script>
+    
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo-container">
+            <a href="#" class="header-logo">
+                <img src="/assets/icons/logo-colored.svg" alt="Bizdin Alem" width="108" height="85">
+            </a>
+        </div>
+        <div class="header-link-container">
+            <nav class="header-nav">
+                <a href="#" class="header-nav-link header-nav-link--active" aria-current="page">Главная</a>
+                <a href="#" class="header-nav-link">Книги</a>
+                <a href="#" class="header-nav-link">Мои книги</a>
+                <a href="#" class="header-nav-link">О проекте</a>
+            </nav>
+            <button type="button" class="btn-register">
+                <div class="header-btn-register-text">Зарегистрироваться</div>
+                <img src="/assets/icons/header-arrow-toUp.svg" alt="">
+            </button>
+            <div class="lang-switcher">
+                <button type="button" class="lang-switcher-toggle" aria-expanded="false">
+                    RU
+                    <img src="/assets/icons/header-arrow-toDown.svg" alt="" class="arrow">
+                </button>
+                <ul class="lang-switcher-list" hidden>
+                    <li><button type="button" class="lang-switcher-option" data-lang="ru">RU</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="kz">KZ</button></li>
+                    <li><button type="button" class="lang-switcher-option" data-lang="en">EN</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="collection">
+        <div class="collection__search-wrap">
+            <div class="collection__search">
+
+                <button type="button" class="collection__filter-btn" aria-label="Фильтры">
+                    <svg width="44" height="33" viewBox="0 0 44 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.25781 4.67969H32.8589" stroke="#282828" stroke-width="2.52089" stroke-linecap="round"/>
+                    <path d="M41.0547 16.3867H9.45356" stroke="#282828" stroke-width="2.52089" stroke-linecap="round"/>
+                    <path d="M21.1484 28.0898L2.42184 28.0898" stroke="#282828" stroke-width="2.52089" stroke-linecap="round"/>
+                    <path d="M42.2266 28.0898H30.5224" stroke="#282828" stroke-width="2.52089" stroke-linecap="round"/>
+                    <circle cx="37.541" cy="4.68165" r="3.42121" stroke="#282828" stroke-width="2.52089"/>
+                    <circle cx="4.68165" cy="4.68165" r="3.42121" transform="matrix(-1 0 0 1 9.44531 11.707)" stroke="#282828" stroke-width="2.52089"/>
+                    <circle cx="4.68165" cy="4.68165" r="3.42121" transform="matrix(-1 0 0 1 30.5156 23.4062)" stroke="#282828" stroke-width="2.52089"/>
+                    </svg>
+                </button>
+                
+                <input type="text" class="collection__search-input">
+
+                <button type="button" class="collection__search-btn" aria-label="Искать">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.25111 20.4326C5.27672 17.8871 4.34622 14.6851 4.64889 11.478C4.95157 8.27082 6.46469 5.29943 8.88043 3.16831C11.2962 1.03719 14.4331 -0.0935695 17.6529 0.00606667C20.8728 0.105703 23.9338 1.42825 26.2131 3.70466C28.4944 5.98264 29.8213 9.0448 29.9233 12.2671C30.0254 15.4894 28.8948 18.6294 26.7622 21.0471C24.6295 23.4648 21.6552 24.9784 18.4453 25.2793C15.2355 25.5802 12.0317 24.6459 9.48678 22.6667L9.41869 22.7379L2.70219 29.456C2.55508 29.6031 2.38044 29.7198 2.18824 29.7994C1.99603 29.879 1.79003 29.92 1.58198 29.92C1.37394 29.92 1.16794 29.879 0.975731 29.7994C0.783525 29.7198 0.608883 29.6031 0.461775 29.456C0.314667 29.3089 0.197977 29.1342 0.118362 28.942C0.0387478 28.7498 -0.0022316 28.5438 -0.0022316 28.3358C-0.0022316 28.1277 0.0387478 27.9217 0.118362 27.7295C0.197977 27.5373 0.314667 27.3627 0.461775 27.2156L7.17986 20.4991L7.25111 20.4326ZM10.5381 5.94508C9.64416 6.82458 8.93319 7.87239 8.44621 9.02804C7.95923 10.1837 7.70588 11.4243 7.70077 12.6784C7.69567 13.9324 7.93891 15.1751 8.41646 16.3347C8.89401 17.4943 9.59642 18.5478 10.4832 19.4346C11.3699 20.3213 12.4235 21.0238 13.5831 21.5013C14.7427 21.9789 15.9853 22.2221 17.2394 22.217C18.4934 22.2119 19.7341 21.9585 20.8897 21.4716C22.0454 20.9846 23.0932 20.2736 23.9727 19.3797C25.7303 17.5932 26.7108 15.1845 26.7006 12.6784C26.6904 10.1723 25.6903 7.77168 23.9182 5.99956C22.1461 4.22744 19.7455 3.22736 17.2394 3.21715C14.7332 3.20695 12.3246 4.18745 10.5381 5.94508Z" fill="black"/>
+                    </svg>
+                </button>
+                
+            </div>
+        </div>
+
+        <div class="collection__heading">
+            <span class="collection__badge">Наши Книги</span>
+            <h2 class="collection__title">Коллекция книг о дружбе</h2>
+        </div>
+
+        <div class="collection__grid">
+
+            <div class="collection__book collection__book--beginner">
+                <div class="collection__book-cover">
+                    <img src="/assets/images/TrendingBook1.png" alt="Мистер Лис">
+                </div>
+                <span class="collection__book-status collection__book-status--beginner">Начинающий читатель</span>
+                <h3 class="collection__book-title">Мистер Лис</h3>
+            </div>
+
+            <div class="collection__book collection__book--level3">
+                <div class="collection__book-cover">
+                    <img src="/assets/images/TrendingBook2.png" alt="Наш новый друг">                </div>
+                <span class="collection__book-status collection__book-status--level3">Уровень 3</span>
+                <h3 class="collection__book-title">Наш новый друг</h3>
+            </div>
+
+            <div class="collection__book collection__book--level1">
+                <div class="collection__book-cover">
+                    <img src="/assets/images/TrendingBook3.png" alt="Друзья вместе">
+                </div>
+                <span class="collection__book-status collection__book-status--level1">Уровень 1</span>
+                <h3 class="collection__book-title">Друзья вместе</h3>
+            </div>
+
+            <div class="collection__book collection__book--level3">
+                <div class="collection__book-cover">
+                    <img src="/assets/images/TrendingBook4__Collection.png" alt="Добрая маленькая птичка">
+                </div>
+                <span class="collection__book-status collection__book-status--level3">Уровень 3</span>
+                <h3 class="collection__book-title">Добрая маленькая птичка</h3>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-container__brand">
+                <a href="#" class="footer__logo">
+                    <img src="/assets/icons/logo-white.svg" alt="Bizdin Alem" width="186" height="132">
+                </a>
+                <p class="footer__description">“Bizdin Alem” – инклюзия туралы қазақ, орыс және ағылшын тілінде жазылған кітаптарды оқитын балаларға арналған онлайн кітапхана.</p>
+
+                <div class="footer__lang-switcher">
+                    <button type="button" class="footer__lang-toggle" aria-expanded="false">
+                        Русский
+                        <img src="/assets/icons/ArrowToDownLangSwitcher.svg" alt="" class="footer__lang-arrow">
+                    </button>
+                    <ul class="footer__lang-list" hidden>
+                        <li><button type="button" class="footer__lang-option" data-lang="ru">Русский</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="kz">Қазақша</button></li>
+                        <li><button type="button" class="footer__lang-option" data-lang="en">English</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">КІТАПХАНА</h3>
+                <div class="line"></div>
+                <a href="#" class="footer__nav-link">Басты бет</a>
+                <a href="#" class="footer__nav-link">Кітаптар</a>
+                <a href="#" class="footer__nav-link">Менің кітаптарым</a>
+                <a href="#" class="footer__nav-link">Жоба туралы</a>
+            </nav>
+
+            <nav class="footer__nav">
+                <h3 class="footer__nav-title">Контакты</h3>
+                <a href="#" class="footer__nav-link footer__nav-link--margin">@bizdinalem</a>
+            </nav>
+
+        </div>
+    </footer>
+
+</body>
+</html>
