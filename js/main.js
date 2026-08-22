@@ -352,3 +352,158 @@ const lwBackBtn = document.getElementById('lwBackBtn');
 lwBackBtn?.addEventListener('click', () => {
     window.location.href = '/pages/little-writer.html';
 });
+
+// Reager page script
+function initReader() {
+  const reader = document.querySelector('.reader');
+  if (!reader) return;
+
+  const pager = reader.querySelector('[data-role="pager"]');
+  const player = reader.querySelector('[data-role="player"]');
+  const btnListen = reader.querySelector('[data-role="mode-listen"]');
+  const btnRead = reader.querySelector('[data-role="mode-read"]');
+
+  function setMode(mode) {
+    const isListen = mode === 'listen';
+    reader.classList.toggle('reader--listen', isListen);
+    if (pager) pager.hidden = isListen;
+    if (player) player.hidden = !isListen;
+    if (btnListen) btnListen.hidden = isListen;   // кнопка "слушать" видна только пока читаем
+    if (btnRead) btnRead.hidden = !isListen;      // кнопка "читать" видна только пока слушаем
+  }
+
+  if (btnListen) btnListen.addEventListener('click', () => setMode('listen'));
+  if (btnRead) btnRead.addEventListener('click', () => setMode('read'));
+
+  setMode('read'); // стартовое состояние страницы
+
+  // --- Лайк ---
+  const likeBtn = reader.querySelector('[data-role="like"]');
+  if (likeBtn) {
+    likeBtn.addEventListener('click', () => {
+      const pressed = likeBtn.getAttribute('aria-pressed') === 'true';
+      likeBtn.setAttribute('aria-pressed', String(!pressed));
+      likeBtn.classList.toggle('reader__icon-btn--liked', !pressed);
+    });
+  }
+
+  if (!player) return;
+
+  // --- Аудиоплеер ---
+  const audio = player.querySelector('[data-role="audio"]');
+  const playBtn = player.querySelector('[data-role="play"]');
+  const iconPlay = playBtn?.querySelector('.icon-play');
+  const iconPause = playBtn?.querySelector('.icon-pause');
+  const fill = player.querySelector('[data-role="progress-fill"]');
+  const handle = player.querySelector('[data-role="progress-handle"]');
+  const track = player.querySelector('[data-role="progress-track"] .reader__progress-track');
+  const timeCurrent = player.querySelector('[data-role="time-current"]');
+  const timeDuration = player.querySelector('[data-role="time-duration"]');
+  const rewindBtn = player.querySelector('[data-role="rewind"]');
+  const forwardBtn = player.querySelector('[data-role="forward"]');
+  const prevPageBtn = player.querySelector('[data-role="prev-page"]');
+  const nextPageBtn = player.querySelector('[data-role="next-page"]');
+
+  if (!audio) return;
+
+  function formatTime(sec) {
+    if (!isFinite(sec)) return '0:00';
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60).toString().padStart(2, '0');
+    return `${m}:${s}`;
+  }
+
+  function updateProgress() {
+    const percent = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+    if (fill) fill.style.width = `${percent}%`;
+    if (handle) handle.style.left = `${percent}%`;
+    if (timeCurrent) timeCurrent.textContent = formatTime(audio.currentTime);
+  }
+
+  audio.addEventListener('loadedmetadata', () => {
+    if (timeDuration) timeDuration.textContent = formatTime(audio.duration);
+  });
+  audio.addEventListener('timeupdate', updateProgress);
+
+  function togglePlay() {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }
+
+  audio.addEventListener('play', () => {
+    iconPlay?.setAttribute('hidden', '');
+    iconPause?.removeAttribute('hidden');
+    playBtn?.setAttribute('aria-pressed', 'true');
+  });
+  audio.addEventListener('pause', () => {
+    iconPause?.setAttribute('hidden', '');
+    iconPlay?.removeAttribute('hidden');
+    playBtn?.setAttribute('aria-pressed', 'false');
+  });
+
+  playBtn?.addEventListener('click', togglePlay);
+
+  rewindBtn?.addEventListener('click', () => {
+    audio.currentTime = Math.max(0, audio.currentTime - 10);
+  });
+  forwardBtn?.addEventListener('click', () => {
+    audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 10);
+  });
+
+  // --- Синхронизация подсветки текста с аудио ---
+  const textBlock = reader.querySelector('[data-role="text"]');
+  const segments = textBlock
+    ? Array.from(textBlock.querySelectorAll('[data-role="text-segment"]'))
+    : [];
+
+  function updateTextHighlight() {
+    const t = audio.currentTime;
+    segments.forEach((seg) => {
+      const start = parseFloat(seg.dataset.start);
+      const end = parseFloat(seg.dataset.end);
+      const isActive = t >= start && t < end;
+      const isPlayed = t >= end;
+      seg.classList.toggle('reader__segment--active', isActive);
+      seg.classList.toggle('reader__segment--played', isPlayed && !isActive);
+    });
+  }
+
+  audio.addEventListener('timeupdate', updateTextHighlight);
+
+  // Клик по сегменту — перемотка аудио на его начало
+  segments.forEach((seg) => {
+    seg.addEventListener('click', () => {
+      const start = parseFloat(seg.dataset.start);
+      if (!isNaN(start)) audio.currentTime = start;
+    });
+  });
+  
+  // --- Клик/перетаскивание по прогресс-бару ---
+  if (track) {
+    function seekFromEvent(e) {
+      const rect = track.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const ratio = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+      if (audio.duration) audio.currentTime = ratio * audio.duration;
+    }
+
+    let dragging = false;
+    track.addEventListener('mousedown', (e) => { dragging = true; seekFromEvent(e); });
+    window.addEventListener('mousemove', (e) => { if (dragging) seekFromEvent(e); });
+    window.addEventListener('mouseup', () => { dragging = false; });
+    track.addEventListener('click', seekFromEvent);
+  }
+
+  // --- Переключение страниц (заглушки — подключишь к своей логике) ---
+  prevPageBtn?.addEventListener('click', () => {
+    console.log('Переход на предыдущую страницу');
+  });
+  nextPageBtn?.addEventListener('click', () => {
+    console.log('Переход на следующую страницу');
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initReader);
