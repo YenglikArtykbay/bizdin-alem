@@ -497,7 +497,7 @@ function initReader() {
     track.addEventListener('click', seekFromEvent);
   }
 
-  // --- Переключение страниц (заглушки — подключишь к своей логике) ---
+  // --- Переключение страниц ---
   prevPageBtn?.addEventListener('click', () => {
     console.log('Переход на предыдущую страницу');
   });
@@ -507,3 +507,271 @@ function initReader() {
 }
 
 document.addEventListener('DOMContentLoaded', initReader);
+
+
+// Admin — sidebar collapse
+const adminSidebar = document.querySelector('[data-role="admin-sidebar"]');
+const sidebarCollapseBtn = document.querySelector('[data-role="sidebar-collapse"]');
+
+if (adminSidebar && sidebarCollapseBtn) {
+    sidebarCollapseBtn.addEventListener('click', () => {
+        adminSidebar.classList.toggle('admin-sidebar--collapsed');
+    });
+}
+
+// Admin main page — daterange dropdown
+(function initAdminDaterange() {
+    const daterange = document.querySelector('[data-role="admin-daterange"]');
+    if (!daterange) return;
+
+    const toggle = daterange.querySelector('.admin-daterange__toggle');
+    const valueEl = daterange.querySelector('.admin-daterange__value');
+    const list = daterange.querySelector('.admin-daterange__list');
+    const options = daterange.querySelectorAll('.admin-daterange__option');
+
+    function formatDate(date) {
+        const dd = String(date.getDate()).padStart(2, '0');
+        const mm = String(date.getMonth() + 1).padStart(2, '0');
+        const yyyy = date.getFullYear();
+        return `${dd}.${mm}.${yyyy}`;
+    }
+
+    function applyRange(days) {
+        const end = new Date();
+        const start = new Date();
+        start.setDate(end.getDate() - days);
+
+        if (valueEl) {
+            valueEl.textContent = `${formatDate(start)} - ${formatDate(end)}`;
+        }
+
+        // сюда пойдёт запрос с параметрами start/end
+        console.log('Выбран диапазон дат:', { days, start, end });
+    }
+
+    toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        list.hidden = isOpen;
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!daterange.contains(e.target)) {
+            list.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    options.forEach((opt) => {
+        opt.addEventListener('click', () => {
+            options.forEach((o) => o.classList.remove('admin-daterange__option--active'));
+            opt.classList.add('admin-daterange__option--active');
+
+            applyRange(Number(opt.dataset.days));
+
+            list.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+})();
+
+// Admin main page — filters button (заглушка до готовности бэка)
+const adminFiltersBtn = document.querySelector('[data-role="admin-filters-btn"]');
+if (adminFiltersBtn) {
+    adminFiltersBtn.addEventListener('click', () => {
+        adminFiltersBtn.classList.toggle('admin-filters-btn--active');
+        console.log('Фильтры нажаты — тут потом будет открытие панели/модалки');
+    });
+}
+
+// Admin main page — date range select
+document.querySelectorAll('[data-role="admin-main-select"]').forEach((select) => {
+    const toggle = select.querySelector('.admin-main-select__toggle');
+    const value = select.querySelector('.admin-main-select__value');
+    const list = select.querySelector('.admin-main-select__list');
+    const options = select.querySelectorAll('.admin-main-select__option');
+
+    toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        list.hidden = isOpen;
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!select.contains(e.target)) {
+            list.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    options.forEach((opt) => {
+        opt.addEventListener('click', () => {
+            options.forEach((o) => o.classList.remove('admin-main-select__option--active'));
+            opt.classList.add('admin-main-select__option--active');
+            value.textContent = opt.textContent;
+            list.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+});
+
+// Admin — profile dropdown
+const adminProfile = document.querySelector('[data-role="admin-profile"]');
+if (adminProfile) {
+    const toggle = adminProfile.querySelector('.admin-profile__toggle');
+    const menu = adminProfile.querySelector('.admin-profile__menu');
+
+    toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        menu.hidden = isOpen;
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!adminProfile.contains(e.target)) {
+            menu.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+}
+
+document.querySelectorAll('[data-role="admin-select"]').forEach((select) => {
+    const toggle = select.querySelector('.admin-select__toggle');
+    const value = select.querySelector('.admin-select__value');
+    const list = select.querySelector('.admin-select__list');
+    const options = select.querySelectorAll('.admin-select__option');
+
+    toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        list.hidden = isOpen;
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!select.contains(e.target)) {
+            list.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    options.forEach((opt) => {
+        opt.addEventListener('click', () => {
+            options.forEach((o) => o.classList.remove('admin-select__option--active'));
+            opt.classList.add('admin-select__option--active');
+            value.textContent = opt.textContent;
+            list.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+});
+
+
+// Admin — notifications page
+const notifTabs = document.querySelector('[data-role="notif-tabs"]');
+const notifList = document.querySelector('[data-role="notif-list"]');
+
+if (notifTabs && notifList) {
+    const tabs = notifTabs.querySelectorAll('.notif-tab');
+    const items = notifList.querySelectorAll('.notif-item');
+
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            tabs.forEach((t) => t.classList.remove('notif-tab--active'));
+            tab.classList.add('notif-tab--active');
+
+            const filter = tab.dataset.filter;
+            items.forEach((item) => {
+                let show = true;
+                if (filter === 'unread') show = item.dataset.status === 'unread';
+                if (filter === 'important') show = item.dataset.important === 'true';
+                item.hidden = !show;
+            });
+        });
+    });
+
+    const markAllBtn = document.querySelector('[data-role="notif-mark-all"]');
+    markAllBtn?.addEventListener('click', () => {
+        items.forEach((item) => {
+            item.dataset.status = 'read';
+        });
+    });
+
+    const pagesWrap = document.querySelector('[data-role="notif-pages"]');
+    pagesWrap?.querySelectorAll('.notif-page__btn:not([data-dir])').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            pagesWrap.querySelectorAll('.notif-page__btn').forEach((b) => b.classList.remove('notif-page__btn--active'));
+            btn.classList.add('notif-page__btn--active');
+        });
+    });
+}
+
+
+
+/*   SUPPORT PAGE  */
+
+(function initSupportSelects() {
+    const selects = document.querySelectorAll('[data-role="support-select"]');
+    if (!selects.length) return;
+
+    function closeAll(except) {
+        selects.forEach((select) => {
+            if (select === except) return;
+            const toggle = select.querySelector('.support-select__toggle');
+            const list = select.querySelector('.admin-select__list');
+            if (!list || list.hidden) return;
+            list.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+        });
+    }
+
+    selects.forEach((select) => {
+        const toggle = select.querySelector('.support-select__toggle');
+        const list = select.querySelector('.admin-select__list');
+        const valueEl = select.querySelector('.admin-select__value');
+        if (!toggle || !list) return;
+
+        // Открыть/закрыть по клику на toggle
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = !list.hidden;
+
+            closeAll(select);
+
+            list.hidden = isOpen;
+            toggle.setAttribute('aria-expanded', String(!isOpen));
+        });
+
+        // Выбор пункта списка
+        list.addEventListener('click', (e) => {
+            const option = e.target.closest('.admin-select__option');
+            if (!option) return;
+
+            // обновить активный пункт
+            list.querySelectorAll('.admin-select__option').forEach((el) => {
+                el.classList.remove('admin-select__option--active');
+            });
+            option.classList.add('admin-select__option--active');
+
+            // обновить отображаемое значение
+            if (valueEl) {
+                valueEl.textContent = option.textContent.trim();
+            }
+
+            // закрыть список
+            list.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+
+        });
+    });
+
+    // Закрыть все по клику вне любого support-select
+    document.addEventListener('click', () => {
+        closeAll(null);
+    });
+
+    // Закрыть по Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape') return;
+        closeAll(null);
+    });
+})();
