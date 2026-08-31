@@ -6189,3 +6189,20 @@
 .admin-members .notif-pagination{
     margin-top: 12px;
 }
+
+
+
+/*            Moderation admin page styling         */
+.moderation__book-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+.moderation__book-info .support-user{
+    padding-left: 0;
+    text-align: left;
+}
+.admin-moderation .support-table__cell{
+    text-align: center;
+}
