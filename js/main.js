@@ -636,10 +636,12 @@ if (adminProfile) {
 }
 
 document.querySelectorAll('[data-role="admin-select"]').forEach((select) => {
-    const toggle = select.querySelector('.admin-select__toggle');
+    const toggle = select.querySelector(':scope > button');
     const value = select.querySelector('.admin-select__value');
     const list = select.querySelector('.admin-select__list');
     const options = select.querySelectorAll('.admin-select__option');
+
+    if (!toggle || !list) return;
 
     toggle.addEventListener('click', () => {
         const isOpen = toggle.getAttribute('aria-expanded') === 'true';
@@ -658,7 +660,7 @@ document.querySelectorAll('[data-role="admin-select"]').forEach((select) => {
         opt.addEventListener('click', () => {
             options.forEach((o) => o.classList.remove('admin-select__option--active'));
             opt.classList.add('admin-select__option--active');
-            value.textContent = opt.textContent;
+            if (value) value.textContent = opt.textContent;
             list.hidden = true;
             toggle.setAttribute('aria-expanded', 'false');
         });
