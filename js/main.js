@@ -777,3 +777,436 @@ if (notifTabs && notifList) {
         closeAll(null);
     });
 })();
+
+
+// Admin Settings 
+
+function initSettingsTabs() {
+    const tabs = document.querySelectorAll('[data-role="settings-tabs"] .admin-settings__tab');
+    const panels = document.querySelectorAll('.admin-settings__tab-panel');
+    if (!tabs.length) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.dataset.tab;
+
+            tabs.forEach(t => {
+                const isActive = t === tab;
+                t.classList.toggle('admin-settings__tab--active', isActive);
+                t.querySelector('.admin-settings__tab-icon')
+                    ?.classList.toggle('admin-settings__tab-icon--active', isActive);
+            });
+
+            panels.forEach(panel => {
+                panel.hidden = panel.dataset.tab !== target;
+            });
+        });
+    });
+}
+
+function initAdminSelects() {
+    const selects = document.querySelectorAll('[data-role="admin-select"]');
+    if (!selects.length) return;
+
+    selects.forEach(select => {
+        const toggle = select.querySelector('.admin-select__toggle');
+        const list = select.querySelector('.admin-select__list');
+        const valueEl = select.querySelector('.admin-select__value');
+        const items = select.querySelectorAll('.admin-select__item');
+
+        toggle.addEventListener('click', () => {
+            const isOpen = select.classList.toggle('admin-select--open');
+            list.hidden = !isOpen;
+            toggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                items.forEach(i => i.classList.remove('admin-select__item--active'));
+                item.classList.add('admin-select__item--active');
+                valueEl.textContent = item.textContent;
+                select.classList.remove('admin-select--open');
+                list.hidden = true;
+                toggle.setAttribute('aria-expanded', 'false');
+                console.log('Выбрано значение:', item.dataset.value);
+            });
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        selects.forEach(select => {
+            if (!select.contains(e.target)) {
+                select.classList.remove('admin-select--open');
+                const list = select.querySelector('.admin-select__list');
+                if (list) list.hidden = true;
+                select.querySelector('.admin-select__toggle')?.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+}
+
+function initSettingsForm() {
+    const form = document.querySelector('[data-role="settings-form-general"]');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        console.log('Сохранение настроек:', data); // заглушка бэкенда
+    });
+}
+
+initSettingsTabs();
+initAdminSelects();
+initSettingsForm();
+
+
+/* ===== Settings — Users & Roles tab ===== */
+
+// Роль по умолчанию — список с выбором одного пункта
+function initRoleDefaultList() {
+    const list = document.querySelector('[data-role="role-default-list"]');
+    if (!list) return;
+
+    const items = list.querySelectorAll('.role-list__item');
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            items.forEach(i => i.classList.remove('role-list__item--active'));
+            item.classList.add('role-list__item--active');
+            console.log('Роль по умолчанию:', item.dataset.value);
+        });
+    });
+}
+
+// Матрица разрешений — клик по ячейке циклично переключает уровень доступа
+function initPermMatrix() {
+    const buttons = document.querySelectorAll('.perm-select');
+    if (!buttons.length) return;
+
+    const levels = ['none', 'view', 'edit'];
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const current = btn.dataset.value;
+            const nextIndex = (levels.indexOf(current) + 1) % levels.length;
+            const next = levels[nextIndex];
+            btn.dataset.value = next;
+            btn.classList.toggle('perm-select--view', next === 'view');
+            btn.classList.toggle('perm-select--edit', next === 'edit');
+            console.log('Разрешение изменено:', next);
+        });
+    });
+}
+
+// Приглашение администратора
+function initInviteAdminForm() {
+    const form = document.querySelector('[data-role="invite-admin-form"]');
+    const submitBtn = document.querySelector('.invite-form__submit');
+    if (!form || !submitBtn) return;
+
+    submitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const input = form.querySelector('.invite-form__input');
+        const email = input.value.trim();
+
+        if (!email) {
+            alert('Введите email администратора');
+            return;
+        }
+
+        console.log('Приглашение отправлено на:', email); // заглушка бэкенда
+        input.value = '';
+    });
+}
+
+// Сохранение настроек ролей (тумблеры + чекбоксы ролей)
+function initRolesSaveButton() {
+    const form = document.getElementById('roles-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const defaultRole = form.querySelector('.role-list__item--active')?.dataset.value;
+
+        const enabledRoles = Array.from(form.querySelectorAll('.role-checklist__checkbox'))
+            .filter(cb => cb.checked)
+            .map(cb => cb.id);
+
+        const toggles = Array.from(form.querySelectorAll('.admin-settings-roles__switch input'))
+            .reduce((acc, input) => {
+                acc[input.name] = input.checked;
+                return acc;
+            }, {});
+
+        console.log('Сохранение настроек ролей:', { defaultRole, enabledRoles, toggles });
+    });
+}
+
+initRoleDefaultList();
+initPermMatrix();
+initInviteAdminForm();
+initRolesSaveButton();
+
+/* ===== Settings — Notifications tab ===== */
+
+function initNotifFrequencyList() {
+    const list = document.querySelector('[data-role="notif-frequency-list"]');
+    if (!list) return;
+
+    const items = list.querySelectorAll('.role-list__item');
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            items.forEach(i => i.classList.remove('role-list__item--active'));
+            item.classList.add('role-list__item--active');
+            console.log('Частота уведомлений:', item.dataset.value);
+        });
+    });
+}
+
+function initNotificationsForm() {
+    const form = document.getElementById('notifications-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const channels = {
+            email: form.querySelector('[name="channelEmail"]')?.checked,
+            inApp: form.querySelector('[name="channelInApp"]')?.checked,
+            push: form.querySelector('[name="channelPush"]')?.checked,
+        };
+
+        const categories = Array.from(form.querySelectorAll('.notif-categories-list .role-checklist__checkbox'))
+            .filter(cb => cb.checked)
+            .map(cb => cb.id);
+
+        const frequency = form.querySelector('.role-list__item--active')?.dataset.value;
+
+        const quietHours = {
+            from: form.querySelector('[name="quietFrom"]')?.value,
+            to: form.querySelector('[name="quietTo"]')?.value,
+        };
+
+        console.log('Сохранение настроек уведомлений:', { channels, categories, frequency, quietHours }); // заглушка бэкенда
+    });
+
+    const cancelBtn = form.closest('.admin-settings__users-pannel')?.querySelector('[data-role="notif-cancel"]');
+    cancelBtn?.addEventListener('click', () => {
+        form.reset();
+        console.log('Изменения отменены');
+    });
+}
+
+initNotifFrequencyList();
+initNotificationsForm();
+
+/* ===== Settings — Notifications: переключение между двумя страницами ===== */
+function initNotifPageNav() {
+    const page1 = document.querySelector('[data-role="notif-page-1"]');
+    const page2 = document.querySelector('[data-role="notif-page-2"]');
+    const nextBtn = document.querySelector('[data-role="notif-next"]');
+    const prevBtn = document.querySelector('[data-role="notif-prev"]');
+    if (!page1 || !page2) return;
+
+    nextBtn?.addEventListener('click', () => {
+        page1.hidden = true;
+        page2.hidden = false;
+    });
+
+    prevBtn?.addEventListener('click', () => {
+        page2.hidden = true;
+        page1.hidden = false;
+    });
+}
+
+initNotifPageNav();
+
+
+/* ===== Settings — System tab ===== */
+function initSystemTab() {
+    const panel = document.querySelector('.admin-settings__tab-panel[data-tab="system"]');
+    if (!panel) return;
+
+    const maintenanceToggle = panel.querySelector('[name="maintenanceMode"]');
+    const maintenanceText = panel.querySelector('[data-role="maintenance-status"]');
+    maintenanceToggle?.addEventListener('change', () => {
+        if (maintenanceText) {
+            maintenanceText.textContent = maintenanceToggle.checked ? 'Включен' : 'Выключен';
+        }
+    });
+
+    const clearCacheBtn = panel.querySelector('[data-role="clear-cache-btn"]');
+    clearCacheBtn?.addEventListener('click', () => {
+        console.log('Очистка кэша запрошена'); // заглушка бэкенда
+        alert('Кэш очищен');
+    });
+
+    const saveBtn = panel.querySelector('[data-role="system-save"]');
+    saveBtn?.addEventListener('click', () => {
+        const selects = Array.from(panel.querySelectorAll('.admin-select--system .admin-select__value'))
+            .map(el => el.textContent.trim());
+
+        const data = {
+            maintenanceMode: maintenanceToggle?.checked ?? false,
+            backupSchedule: selects[0],
+            maxFileSize: selects[1],
+            sessionTimeout: selects[2],
+            securityLogRetention: selects[3],
+        };
+
+        console.log('Сохранение системных настроек:', data); // заглушка бэкенда
+    });
+}
+
+initSystemTab();
+
+
+/* ===== Settings — Integration tab ===== */
+function initIntegrationTab() {
+    const panel = document.querySelector('.admin-settings__tab-panel[data-tab="integration"]');
+    if (!panel) return;
+
+    // Показать/скрыть API-ключ
+    panel.querySelectorAll('[data-role="toggle-key"]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const valueEl = btn.previousElementSibling;
+            if (!valueEl) return;
+            const isMasked = valueEl.dataset.masked !== 'false';
+            valueEl.dataset.masked = String(!isMasked);
+            valueEl.textContent = isMasked
+                ? (valueEl.dataset.full || valueEl.textContent)
+                : (valueEl.dataset.full ? valueEl.dataset.full.replace(/.(?=.{4})/g, '*') : valueEl.textContent);
+        });
+    });
+
+    panel.querySelectorAll('[data-role="integration-edit"]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            console.log('Изменить интеграцию'); // заглушка бэкенда
+        });
+    });
+
+    panel.querySelectorAll('[data-role="integration-test"]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            console.log('Тестирование интеграции'); // заглушка бэкенда
+            alert('Тестовое письмо отправлено');
+        });
+    });
+
+    panel.querySelectorAll('[data-role="integration-connect"]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            console.log('Подключение аналитики'); // заглушка бэкенда
+        });
+    });
+
+    const saveBtn = panel.querySelector('[data-role="integration-save"]');
+    saveBtn?.addEventListener('click', () => {
+        console.log('Сохранение настроек интеграций'); // заглушка бэкенда
+    });
+}
+
+initIntegrationTab();
+
+
+
+/* ===== Settings — Languages tab ===== */
+
+function initLangInterfaceList() {
+    const list = document.querySelector('[data-role="lang-interface-list"]');
+    if (!list) return;
+
+    const items = list.querySelectorAll('.role-list__item');
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            items.forEach(i => i.classList.remove('role-list__item--active'));
+            item.classList.add('role-list__item--active');
+            console.log('Язык интерфейса:', item.dataset.value);
+        });
+    });
+}
+
+// Универсальный drag-and-drop для списка (поддерживаемые языки / приоритет контента)
+function initDragList(selector, itemClass, dragClass, onReorder) {
+    const list = document.querySelector(selector);
+    if (!list) return;
+
+    let draggedEl = null;
+
+    list.addEventListener('dragstart', (e) => {
+        const item = e.target.closest(`.${itemClass}`);
+        if (!item) return;
+        draggedEl = item;
+        item.classList.add(dragClass);
+        e.dataTransfer.effectAllowed = 'move';
+    });
+
+    list.addEventListener('dragend', () => {
+        draggedEl?.classList.remove(dragClass);
+        draggedEl = null;
+        onReorder?.(list);
+    });
+
+    list.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        const target = e.target.closest(`.${itemClass}`);
+        if (!target || target === draggedEl) return;
+
+        const rect = target.getBoundingClientRect();
+        const isAfter = e.clientY - rect.top > rect.height / 2;
+        list.insertBefore(draggedEl, isAfter ? target.nextSibling : target);
+    });
+}
+
+function initLangSupportList() {
+    initDragList('[data-role="lang-support-list"]', 'lang-support-item', 'lang-support-item--dragging', (list) => {
+        const order = Array.from(list.querySelectorAll('.lang-support-item')).map(i => i.dataset.value);
+        console.log('Новый порядок поддерживаемых языков:', order);
+    });
+}
+
+function initLangPriorityList() {
+    initDragList('[data-role="lang-priority-list"]', 'lang-priority-item', 'lang-priority-item--dragging', (list) => {
+        const items = Array.from(list.querySelectorAll('.lang-priority-item'));
+        items.forEach((item, index) => {
+            item.querySelector('.lang-priority-item__number').textContent = index + 1;
+        });
+        console.log('Новый порядок приоритета:', items.map(i => i.dataset.value));
+    });
+}
+
+function initLanguagesForm() {
+    const form = document.getElementById('languages-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const interfaceLang = form.querySelector('.lang-interface-list .role-list__item--active')?.dataset.value;
+
+        const supportedLangs = Array.from(form.querySelectorAll('.lang-support-item'))
+            .map(item => ({
+                value: item.dataset.value,
+                enabled: item.querySelector('input[type="checkbox"]').checked,
+            }));
+
+        const contentPriority = Array.from(form.querySelectorAll('.lang-priority-item'))
+            .map(item => item.dataset.value);
+
+        const autoDetect = form.querySelector('[name="autoDetectLang"]')?.checked;
+
+        const dateFormat = form.querySelector('.lang-format-field:nth-of-type(1) .admin-select__item--active')?.dataset.value;
+        const numberFormat = form.querySelector('.lang-format-field:nth-of-type(2) .admin-select__item--active')?.dataset.value;
+
+        console.log('Сохранение настроек языков:', {
+            interfaceLang, supportedLangs, contentPriority, autoDetect, dateFormat, numberFormat,
+        }); // заглушка бэкенда
+    });
+}
+
+initLangInterfaceList();
+initLangSupportList();
+initLangPriorityList();
+initLanguagesForm();
