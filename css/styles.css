@@ -8555,12 +8555,158 @@
     background: linear-gradient(180deg, #18254D 23.08%, #C5AC85 82.21%);
     overflow: hidden;
 }
+.welcome-hero-light{
+    position: relative;
+    height: 1080px;
+    background: linear-gradient(180deg, #EC8C24 0%, #EBCF6E 80.77%);
+    overflow: hidden;
+}
 .welcome-hero__moon{
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     width: 465px;
     height: 465px;
 }
+
+.welcome-hero__moon--base{
+    z-index: 2;
+}
+.welcome-hero__sunstar{
+    position: absolute;
+    z-index: 2;
+}
+.welcome-hero__sunstar--1{
+    width: 80px;
+    height: 100px;
+    top: -9px;
+    left: 439px;
+}
+.welcome-hero__sunstar--2{
+    width: 130px;
+    height: 171px;
+    top: -33px;
+    left: 853px;
+    rotate: 16.57deg;
+}
+.welcome-hero__sunstar--3{
+    width: 90px;
+    height: 106px;
+    top: -5px;
+    left: 1327px;
+    rotate: -3.3deg;
+}
+.welcome-hero__sunstar--4{
+    width: 100px;
+    height: 134px;
+    top: 105.41px;
+    left: 582.34px;
+    rotate: -3.3deg;
+}
+.welcome-hero__sunstar--5{
+    width: 120px;
+    height: 167px;
+    top: 115px;
+    left: 1173px;
+    rotate: -26.39deg;
+}
+.welcome-hero__sunstar--6{
+    width: 80px;
+    height: 90px;
+    top: 413px;
+    left: -11px;
+    rotate: -26.39deg;
+}
+.welcome-hero__sunstar--7{
+    width: 80px;
+    height: 90px;
+    top: 418.36px;
+    left: 524.77px;
+    rotate: -26.39deg;
+}
+.welcome-hero__sunstar--8{
+    width: 110px;
+    height: 146px;
+    top: 360px;
+    left: 710px;
+    rotate: 40.87deg;
+}
+.welcome-hero__sunstar--9{
+    width: 180px;
+    height: 255px;
+    top: 230px;
+    left: 960px;
+    rotate: 5.27deg;
+}
+.welcome-hero__sunstar--10{
+    width: 80px;
+    height: 99px;
+    top: 370px;
+    left: 1200px;
+    rotate: -26.39deg;
+}
+.welcome-hero__sunstar--11{
+    width: 120px;
+    height: 158px;
+    top: 395px;
+    left: 1325px;
+    rotate: 2.65deg;
+}
+.welcome-hero__sunstar--12{
+    width: 150px;
+    height: 203px;
+    top: 532px;
+    left: 88px;
+    rotate: 17.28deg;
+}
+.welcome-hero__sunstar--13{
+    width: 80px;
+    height: 99px;
+    top: 750px;
+    left: 403px;
+    rotate: -26.39deg;
+}
+.welcome-hero__sunstar--14{
+    width: 70px;
+    height: 81px;
+    top: 896px;
+    left: 570px;
+    rotate: -26.39deg;
+}
+.welcome-hero__sunstar--15{
+    width: 140px;
+    height: 194px;
+    top: 722px;
+    left: 650px;
+    rotate: 8.34deg;
+}
+.welcome-hero__sunstar--16{
+    width: 80px;
+    height: 99px;
+    top: 807px;
+    left: 951px;
+    rotate: -26.39deg;
+}
+.welcome-hero__sunstar--17{
+    width: 110px;
+    height: 149px;
+    top: 582px;
+    left: 1148px;
+    rotate: 5.27deg;
+}
+.welcome-hero__sunstar--18{
+    width: 80px;
+    height: 99px;
+    top: 722px;
+    rotate: -26.39deg;
+}
+.welcome-hero__sunstar--19{
+    width: 80px;
+    height: 99px;
+    top: 667px;
+    left: 1303px;
+    rotate: -26.39deg;
+}
+
 .welcome-hero__stars{
     position: absolute;
     z-index: 2;
