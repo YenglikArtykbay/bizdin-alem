@@ -42,7 +42,7 @@ if (heroSliderEl) {
 }
 
 const trendingSliderEl = document.querySelector('.trending-slider');
-if (trendingSliderEl) {
+if (trendingSliderEl && window.innerWidth > 480) {
     new Swiper(trendingSliderEl, {
         slidesPerView: 3,
         spaceBetween: 40,
@@ -53,6 +53,33 @@ if (trendingSliderEl) {
         },
     });
 }
+
+// Header — mobile menu toggle
+(function initHeaderMobileMenu() {
+    const container = document.querySelector('[data-role="header-link-container"]');
+    const toggle = document.querySelector('[data-role="header-mobile-toggle"]');
+    const nav = document.querySelector('[data-role="header-nav"]');
+    if (!container || !toggle || !nav) return;
+
+    toggle.addEventListener('click', () => {
+        const isOpen = container.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!container.contains(e.target)) {
+            container.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    nav.querySelectorAll('a, button').forEach((el) => {
+        el.addEventListener('click', () => {
+            container.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+})();
 
 const footerLangSwitcher = document.querySelector('.footer__lang-switcher');
 const footerLangToggle = document.querySelector('.footer__lang-toggle');

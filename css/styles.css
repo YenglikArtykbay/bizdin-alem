@@ -1506,7 +1506,7 @@
     color: #199FD9;
     text-decoration: none;
 }
-.swiper-wrapper{
+.info-card .swiper-wrapper{
     padding-left: 19px;
 }
 
