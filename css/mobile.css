@@ -478,3 +478,170 @@
         font-size: 14px;
     }
 }
+
+/* ============================================================= */
+/*   MOBILE — Little Writer page (<= 480px)                       */
+/* ============================================================= */
+@media (max-width: 480px){
+
+    /* ---------- Hero ---------- */
+    .lw-hero{
+        margin: 10px 0;
+        border-radius: 0;
+        padding: 24px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        max-height: none;
+        overflow: hidden;
+    }
+    .lw-hero__decor{
+        display: none;
+    }
+    .lw-hero__content{
+        display: contents;
+    }
+    .lw-hero__title{
+        order: 1;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 110.00000000000001%;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+    }
+    .lw-hero__subtitle{
+        order: 2;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+    }
+    .lw-hero__subtitle br{
+        display: none;
+    }
+    .lw-hero__img{
+        order: 3;
+        position: static;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        margin: 24px 0;
+    }
+    .lw-hero__btn{
+        order: 4;
+        width: 100%;
+        padding: 14px 24px;
+        justify-content: center;
+        height: 48px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+    }
+
+    /* ---------- Steps ---------- */
+    .lw-steps{
+        padding: 40px 16px 0;
+    }
+    .lw-steps__title{
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+        color: #021B3B;
+    }
+    .lw-steps__subtitle{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        margin-bottom: 0;
+        color: #021B3B;
+    }
+    .lw-steps__grid{
+        margin-top: 24px;
+        margin-bottom: 10px;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .lw-step{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+            "img img"
+            "num title"
+            "desc desc";
+        column-gap: 12px;
+        row-gap: 8px;
+        align-items: start;
+        height: auto;
+        padding: 16px;
+        text-align: left;
+        border-radius: 24px;
+    }
+    .lw-step__img{
+        grid-area: img;
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        margin-bottom: 0;
+        border-radius: 16px;
+    }
+    .lw-step__number{
+        grid-area: num;
+        position: static;
+        transform: none;
+        width: 32px;
+        height: 32px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        border: none;
+        align-self: center;
+    }
+    .lw-step__title{
+        grid-area: title;
+        margin-bottom: 0;
+        align-self: center;
+        text-align: left;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 100%;
+    }
+    .lw-step__desc{
+        grid-area: desc;
+        max-width: 100%;
+        text-align: left;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 140%;
+        font-family: 'Rubik', sans-serif;
+    }
+
+    /* ---------- Choose a picture ---------- */
+    .lw-gallery{
+        margin: 10px 0;
+        padding: 32px 16px;
+        border-radius: 24px;
+    }
+    .lw-gallery__title{
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 120%;
+        margin-bottom: 6px;
+    }
+    .lw-gallery__subtitle{
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 130%;
+        margin-bottom: 20px;
+    }
+    .lw-gallery__grid{
+        margin-left: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .lw-gallery__item{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+    }
+}
