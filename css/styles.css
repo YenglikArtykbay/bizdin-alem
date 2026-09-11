@@ -3644,8 +3644,8 @@
     box-shadow: 0px 0px 4px 0px #00000040;
 }
 .collection__book--beginner{ border: 0.5px solid #EC8300; }
-.collection__book--level3{ border: 0.5px solid #A6CE39 }
-.collection__book--level1{ border: 0.5px solid #FFDD00 }
+.collection__book--level3{ border: 0.5px solid #A6CE39; }
+.collection__book--level1{ border: 0.5px solid #FFDD00; }
 
 .collection__book-cover{
     padding-top: 26px;

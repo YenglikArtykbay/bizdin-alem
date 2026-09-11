@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BizdinAlem</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/mobile.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/js/main.js" defer></script>
@@ -17,14 +18,18 @@
                 <img src="/assets/icons/logo-colored.svg" alt="Bizdin Alem" width="108" height="85">
             </a>
         </div>
-        <div class="header-link-container">
-            <nav class="header-nav">
+        <div class="header-link-container" data-role="header-link-container">
+            <nav class="header-nav" data-role="header-nav">
                 <a href="#" class="header-nav-link header-nav-link--active" aria-current="page">Главная</a>
                 <a href="#" class="header-nav-link">Книги</a>
                 <a href="#" class="header-nav-link">Мои книги</a>
                 <a href="#" class="header-nav-link">О проекте</a>
+                <button type="button" class="btn-register btn-register--mobile">
+                    <div class="header-btn-register-text">Зарегистрироваться</div>
+                    <img src="/assets/icons/header-arrow-toUp.svg" alt="">
+                </button>
             </nav>
-            <button type="button" class="btn-register">
+            <button type="button" class="btn-register btn-register--desktop">
                 <div class="header-btn-register-text">Зарегистрироваться</div>
                 <img src="/assets/icons/header-arrow-toUp.svg" alt="">
             </button>
@@ -39,15 +44,23 @@
                     <li><button type="button" class="lang-switcher-option" data-lang="en">EN</button></li>
                 </ul>
             </div>
+            <button type="button" class="header-mobile-toggle-profile" data-role="header-mobile-toggle-profile" aria-expanded="false" aria-label="Открыть профиль">
+                <img src="/assets/images/ProfileMobileHeader.png" alt="" width="34" height="34">
+            </button>
+            <button type="button" class="header-mobile-toggle" data-role="header-mobile-toggle" aria-expanded="false" aria-label="Открыть меню">
+                <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1H21M1 8H21M1 15H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
         </div>
     </header>
 
     <main class="book-page">
         <!-- Card about book's information -->
+        <h1 class="book-card__info--title book-card__info--title-mobile">Мистер Лис</h1>
         <section class="book-card">
-
             <div class="book-card__info">
-                <h1 class="book-card__info--title">Мистер Лис</h1>
+                <h1 class="book-card__info--title book-card__info--title-desktop">Мистер Лис</h1>
                 <div class="book-card__info--badge">Начинающий читатель</div>
 
                 <div class="book-card__info--meta">
@@ -91,14 +104,13 @@
                     Добрая история о маленьком лисёнке, который отправляется в путешествие по лесу, находит новых друзей и узнаёт, что настоящая дружба творит чудеса.
                 </div>
 
-                <div class="book-card__info--offline-hint">
+                <div class="book-card__info--offline-hint book-card__info--offline-hint-desktop">
                     <img src="/assets/images/OfflineHint_Girl_BookCard.png" alt="Girl with WiFi icon" width="130" height="130">
                     <div class="offline-hint__text">
                         <h2 class="offline-hint__text--quote">Читать офлайн — это просто!</h2>
                         <p class="offline-hint__text--description">Скачайте книгу и наслаждайтесь чтением <br>в любое время без интернета.</p>
                     </div>
                 </div>
-
             </div>
             
             <div class="book-card__cover">
@@ -137,8 +149,15 @@
                     </button>
                 </div>
             </div>
-
         </section>
+
+        <div class="book-card__info--offline-hint book-card__info--offline-hint-mobile">
+            <img src="/assets/images/OfflineHint_Girl_BookCard.png" alt="Girl with WiFi icon" width="130" height="130">
+            <div class="offline-hint__text">
+                <h2 class="offline-hint__text--quote">Читать офлайн — это просто!</h2>
+                <p class="offline-hint__text--description">Скачайте книгу и наслаждайтесь чтением <br>в любое время без интернета.</p>
+            </div>
+        </div>
 
         <!-- Section about recommendations -->
         <section class="book-recommendations">
@@ -207,7 +226,7 @@
             </nav>
 
             <nav class="footer__nav">
-                <h3 class="footer__nav-title">Контакты</h3>
+                <h3 class="footer__nav-title footer__nav-title-contacts">Контакты</h3>
                 <a href="#" class="footer__nav-link footer__nav-link--margin">@bizdinalem</a>
             </nav>
 
