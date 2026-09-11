@@ -230,13 +230,11 @@
 .hero-slide--image{
     position: absolute;
     z-index: 2;
-    max-width: 1000px;
-    max-height: 580px;
-    width: auto;
+    width: 1128px;
     height: auto;
     object-fit: contain;
-    top: 0;
-    right: 0;
+    bottom: -100px;
+    right: -200px;
     pointer-events: none;
 }
 
