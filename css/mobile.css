@@ -191,6 +191,10 @@
         font-size: 16px;
         line-height: 100%;
     }
+    .btn svg{
+        width: 18px;
+        height: auto;
+    }
 
     /* Slide 2 — book of day (graceful stack) */
     .hero-slide--book-of-day{
@@ -224,6 +228,10 @@
         padding: 5px 5px 10px 10px;
         height: 47px;
     }
+    .calendar-icon{
+        width: 25px;
+        height: auto;
+    }
     .book-of-day--quote{
         gap: 2px;
     }
@@ -240,6 +248,10 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 100%;
+    }
+    .book-of-day__btn svg{
+        width: 18px;
+        height: auto;
     }
 
     /* Slide 3 — challenge (graceful stack) */

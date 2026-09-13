@@ -227,6 +227,11 @@
     gap: 12px;
     cursor: pointer;
 }
+.btn:hover{
+    background-color: #199FD9;
+    border: 1px solid #fff;  
+    color: #fff;
+}
 .hero-slide--image{
     position: absolute;
     z-index: 2;
@@ -377,15 +382,22 @@
 }
 .book-of-day__btn--read{
     background-color: #199FD9;
+    color: #fff;
+}
+.book-of-day__btn--read:hover{
+    color: #199FD9;
+    background-color: #fff;
 }
 .book-of-day__btn--listen{
     background-color: #A6D919;
+    color: #fff;
     display: flex;
     gap: 10px;
     padding-left: 25px;
 }
-.book-of-day__btn--icon{
-    color: #fff;
+.book-of-day__btn--listen:hover{
+    color: #A6D919;
+    background-color: #fff;
 }
 
 .book-of-day--calendar-quote{
@@ -3206,6 +3218,10 @@
     line-height: 96%;
     letter-spacing: -0.05em;
     cursor: pointer;
+}
+.lw-hero__btn:hover{
+    color: #fdfdfd;
+    background-color: #1A9CD7;
 }
 .lw-hero__decor{
     position: absolute;
