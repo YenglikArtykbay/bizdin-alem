@@ -1092,3 +1092,177 @@
         display: flex;
     }
 }
+
+/* ============================================================= */
+/*   Header mobile profile avatar — fix (all pages, <= 480px)    */
+/* ============================================================= */
+@media (max-width: 480px){
+    .header-mobile-toggle-profile{
+        display: flex;
+    }
+}
+
+/* ============================================================= */
+/*   MOBILE — Book-reader page (<= 480px)                        */
+/* ============================================================= */
+@media (max-width: 480px){
+
+    .reader{
+        padding: 20px 16px;
+    }
+    .reader__card{
+        background-color: transparent;
+        padding: 0;
+    }
+
+    /* topbar: back + actions на одной строке, заголовок ниже */
+    .reader__topbar{
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .reader__back{
+        margin-top: 0;
+        gap: 7px;
+        font-size: 7.94px;
+    }
+    .reader__back svg{
+        width: 13.6px;
+        height: auto;
+    }
+    .reader__heading{
+        gap: 4px;
+    }
+    .reader__title{
+        font-size: 25px;
+    }
+    .reader__heading .reader__page{
+        font-size: 9.76px;
+    }
+    .reader__actions{
+        gap: 7.65px;
+    }
+    .reader__icon-btn{
+        width: 24.07px;
+        height: 24.07px;
+    }
+    .reader__icon-btn svg{
+        width: 16.19px;
+        height: auto;
+    }
+
+    /* картинка */
+    .reader__image{
+        height: 188.42px;
+        border-radius: 10.15px;
+        margin-bottom: 20px;
+    }
+    .reader__image img{
+        height: 188.42px;
+        width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        border-radius: 10.15px;
+    }
+
+    /* текст книги */
+    .reader__text{
+        padding: 10.61px 16.58px;
+        border-radius: 10.15px;
+        margin-bottom: 20px;
+        background-color: #fff;
+    }
+    .reader__segment{
+        font-size: 15px;
+        line-height: 193%;
+    }
+    .reader--listen .reader__text{
+        max-height: 261px;
+    }
+    .reader--listen .reader__segment{
+        font-size: 10.38px;
+    }
+
+    /* пейджер: стрелки + точки */
+    .reader__page[data-role="pager"]{
+        gap: 21.8px;
+    }
+    .reader__pager-btn{
+        width: 54.95px;
+        height: 19.5px;
+        border-radius: 2.95px;
+        flex-shrink: 0;
+        border: 0.2px solid #0771F2;
+    }
+    .reader__pager-btn svg{
+        width: 26.59px;
+        height: auto;
+    }
+    .reader__dots{
+        gap: 4px;
+        overflow-x: auto;
+    }
+    .reader__dot{
+        width: 9.3px;
+        height: 9.3px;
+        flex-shrink: 0;
+    }
+    .reader__dot--active{
+        width: 16.86px;
+        height: 16.86px;
+        font-size: 10.18px;
+    }
+
+    /* плеер (режим "слушать") */
+    .reader__player{
+        background-color: #F6F9FE;
+        padding: 14px 14px 7.61px 14px;
+        gap: 7.32px;
+        border-radius: 5.86px;
+    }
+    .reader__time{
+        font-size: 4.33px;
+    }
+    .reader__time--start{
+        top: 20.22px;
+        left: 39.55px;
+    }
+    .reader__time--finish{
+        top: 20.22px;
+        right: 39.55px;
+
+    }
+    .reader__progress-track{
+        flex: 1;
+        position: relative;
+        height: 2.64px;
+        width: 100%;
+        border-radius: 39.84px;
+    }
+    .reader__progress-fill{
+        border-radius: 39.84px;
+        width: 133.59px;
+    }
+    .reader__progress-handle{
+        left: 133.59px;
+        width: 5.86px;
+        height: 5.86px;
+        border: 0.88px solid #0971F3
+    }
+    .reader__controls{
+        gap: 41px;
+    }
+    .reader__control-btn--10back,
+    .reader__control-btn--10next{
+        margin: 0;
+        width: 9.37px;
+        height: 9.37px;
+    }
+    .reader__control-btn svg{
+        height: auto;
+        width: 9.97px;
+    }
+    .reader__control-btn--play svg{
+        width: 25.19px;
+        height: auto;
+    }
+}
