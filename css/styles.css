@@ -730,16 +730,19 @@
     margin-right: -5px;
     background: -webkit-linear-gradient(#A6CE39 0%, #C3FF1F 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .trending__number--2{ 
     background: -webkit-linear-gradient(#9BD2F4 0%, #009EFF 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .trending__number--3{ 
     background: -webkit-linear-gradient(#F18FBB 0%, #FF0072 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .trending__card{
